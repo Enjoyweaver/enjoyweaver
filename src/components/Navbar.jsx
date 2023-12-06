@@ -51,11 +51,11 @@ export default function Navbar() {
                   Original
                 </button>
                 <button
-                  className="block w-full py-2 text-left px-4 mountain-dew-button-hover"
-                  style={{ color: "#336633" }}
-                  onClick={() => selectTheme("mountain-dew")}
+                  className="block w-full py-2 text-left px-4 morning-button-hover"
+                  style={{ color: "#076381" }}
+                  onClick={() => selectTheme("morning")}
                 >
-                  Mountain Dew
+                  Morning
                 </button>
                 <button
                   className="block w-full py-2 text-left px-4 lemonade-button-hover"
@@ -65,12 +65,13 @@ export default function Navbar() {
                   Lemonade
                 </button>
                 <button
-                  className="block w-full py-2 text-left px-4 defi-degen-button-hover"
-                  style={{ color: "#7FFF00" }}
-                  onClick={() => selectTheme("morning")}
+                  className="block w-full py-2 text-left px-4 mountain-dew-button-hover"
+                  style={{ color: "#336633" }}
+                  onClick={() => selectTheme("mountain-dew")}
                 >
-                  Morning
+                  Mountain Dew
                 </button>
+
                 <button
                   className="block w-full py-2 text-left px-4 breezy-button-hover"
                   style={{ color: "#317988" }}
@@ -143,7 +144,7 @@ export default function Navbar() {
                   Neon Night
                 </button>
                 <button
-                  className="block w-full py-2 text-left px-4 neon-night-button-hover"
+                  className="block w-full py-2 text-left px-4 cyberpunk-button-hover"
                   style={{ color: "#00FF00" }}
                   onClick={() => selectTheme("cyberpunk")}
                 >
@@ -263,12 +264,16 @@ export default function Navbar() {
         .original-button-hover:hover {
             background-color: #f1faee;
           }
-          .winter-button-hover:hover {
+          .morning-button-hover:hover {
             background: linear-gradient(260deg, #f0f5ff, #afc9ff, #e0ecff);
             color: #067288;
           }
           .lemonade-button-hover:hover {
             background: linear-gradient(264deg, #f3e598, #f5f5dc, #fff8dc);
+            color: #f0e68c;
+          }
+            .mountain-dew-button-hover:hover {
+            background: #2699bd;
             color: #f0e68c;
           }
           .breezy-button-hover:hover {

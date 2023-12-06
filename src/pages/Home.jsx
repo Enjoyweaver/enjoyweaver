@@ -1,34 +1,64 @@
-export default function Home() {
-  return (
-    <div className="pt-20 flex items-center">
-      <div className="w-1/3 text-center pl-10">
-        <img src="logo.png" alt="Logo" />
-      </div>
-      <div className="w-2/3 text-left pl-20" style={{ maxWidth: "800px" }}>
-        <p
-          className="text-left"
-          style={{ color: "var(--header-color)", fontSize: "3rem" }}
-        >
-          Your website
-        </p>
-        <br></br>
-        <p
-          className="text-left"
-          style={{ color: "var(--header-color)", fontSize: "2rem" }}
-        >
-          Do with this what you will
-        </p>
+import "../App.css";
 
-        <br></br>
-        <div className="text-left">
-          <p style={{ color: "var(--description-color)" }}>
-            Reminisce or produce, illustrate or describe, create or destroy,
-            this is only the beginning.
-          </p>
-          <br />
-          <p style={{ color: "var(--content-color)" }}>
-            This is your template to springboard what you will showcase.
-          </p>
+export default function Home() {
+  const pillarStyles = {
+    marginTop: "150px", // Adjust the value as needed
+  };
+  return (
+    <div className="pillar" style={pillarStyles}>
+      <div className="row">
+        <div className="wrap">
+          <div className="left">get an actual job</div>
+          <div className="right">doing what you love</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="wrap">
+          <div className="left">and make a living</div>
+          <div className="right">by being yourself</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="wrap">
+          <div className="left">you can&apos;t just let</div>
+          <div className="right">other people define</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="wrap">
+          <div className="left">the rest of your life</div>
+          <div className="right">and say you will</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="wrap">
+          <div className="left">be a joke, a failure.</div>
+          <div className="right">follow your heart.</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="wrap">
+          <div className="left">you will end up</div>
+          <div className="right">happy and free, not</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="wrap">
+          <div className="left">a starving artist.</div>
+          <div className="right">love you art and</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="wrap">
+          <div className="left">contribute to society</div>
+          <div className="right">by inspiring people</div>
         </div>
       </div>
     </div>

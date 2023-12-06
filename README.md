@@ -78,7 +78,7 @@ All three pages are similar, so the instructions below apply to each:
   <img src="./public/pages.png" alt="Logo">
 </p>
 
-#### Images and section width
+### Images and section width
 
 In either of the three pages, in the light-blue circle is where you can update the logo or remove it completely.
 
@@ -101,10 +101,10 @@ w-2/3
 ```
 
 as that is applying 2/3's of the page to the text below that is underlined in orange, and now it can take up the whole screen.
-If you want to split the pages, then put the image section at 1/2 and the text section below at 1/2 as well, or you can play around
+If you want to split the page evenly between the two sides, then put the image section at 1/2 and the text section below at 1/2 as well, or you can play around
 with the layout and adjust it how you prefer.
 
-#### Text color and size
+### Text color and size
 
 In the image above, the color of the text is underlined in yellow and the size of the text is underlined in red. You can adjust the colors
 in the App.css page where it lists all of the colors for the themes.

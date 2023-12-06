@@ -1,39 +1,72 @@
-const About = () => {
+import "../App.css";
+
+const ImageGallery = () => {
   return (
-    <div className="pt-20 flex items-center">
-      <div className="w-1/3 text-center pl-10">
-        <img src="logo.png" alt="Profile" />
-      </div>
-      <div className="w-2/3 text-left pl-20" style={{ maxWidth: "800px" }}>
-        <p
-          className="text-left"
-          style={{ color: "var(--header-color)", fontSize: "3rem" }}
-        >
-          About Me
-        </p>
-        <br></br>
-        <p
-          className="text-left"
-          style={{ color: "var(--header-color)", fontSize: "2rem" }}
-        >
-          Do with this what you will
-        </p>
-        <br />
-        <div className="text-left">
-          <p style={{ color: "var(--description-color)" }}>
-            Explore my journey. Uncover my milestones, accomplishments, and
-            defining moments that shape my narrative.
-          </p>
-          <br />
-          <p style={{ color: "var(--content-color)" }}>
-            This canvas reveals my story through degrees achieved, hobbies
-            cherished, cultural influences, and significant life accomplishments
-            that have sculpted my identity.
-          </p>
+    <div className="section-fluid-main">
+      <div className="section-row">
+        <div className="section-col">
+          <div className="section">
+            <div className="section-in">
+              <img src="https://assets.codepen.io/1462889/sl1.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Male Goofy Face</h2>
+        </div>
+        <div className="section-col">
+          <div className="section">
+            <div className="section-in">
+              <img src="https://assets.codepen.io/1462889/sl2.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Toy Pig</h2>
+        </div>
+        <div className="section-col">
+          <div className="section">
+            <div className="section-in">
+              <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Shy Portrait</h2>
+        </div>
+        <div className="section-col">
+          <div className="section">
+            <div className="section-in">
+              <img src="https://assets.codepen.io/1462889/sl4.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Skateboard Face</h2>
+        </div>
+        <div className="section-col">
+          <div className="section">
+            <div className="section-in">
+              <img src="https://assets.codepen.io/1462889/sl5.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Mirror Reflection</h2>
+        </div>
+        <div className="section-col">
+          <div className="section">
+            <div className="section-in">
+              <img src="https://assets.codepen.io/1462889/sl6.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Funny Bunny</h2>
         </div>
       </div>
     </div>
   );
 };
 
-export default About;
+export default ImageGallery;
