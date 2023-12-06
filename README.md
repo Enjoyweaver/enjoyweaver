@@ -35,9 +35,7 @@ root directory
 To clone this repository, use the following command by copying it and pasting it in a
 terminal that you opened inside the folder where you want this stored:
 
-```bash
-git clone https://github.com/Enjoyweaver/websiteTemplate.git
-```
+        git clone https://github.com/Enjoyweaver/websiteTemplate.git
 
 After it is downloaded, then paste this into the terminal:
 
@@ -45,13 +43,13 @@ After it is downloaded, then paste this into the terminal:
 
 To install the necessary dependencies, run:
 
-npm install
-
-```bash
-npm install
-```
+        npm install
 
 This will install all the required packages and dependencies for the project. And once
 it is finished, then you should open the project with VS Code used the command in your terminal:
 
-code .
+        code .
+
+To update the browser tab header, go to the index.html file
+
+![Logo](./public/tabHeader.png)
