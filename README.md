@@ -35,11 +35,13 @@ root directory
 To clone this repository, use the following command by copying it and pasting it in a
 terminal that you opened inside the folder where you want this stored:
 
+```bash
 git clone https://github.com/Enjoyweaver/websiteTemplate.git
+```
 
 After it is downloaded, then paste this into the terminal:
 
-cd websiteTemplate
+        cd websiteTemplate
 
 To install the necessary dependencies, run:
 
