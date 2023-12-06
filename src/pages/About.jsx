@@ -13,6 +13,13 @@ const About = () => {
         >
           About Me
         </p>
+        <br></br>
+        <p
+          className="text-left"
+          style={{ color: "var(--header-color)", fontSize: "2rem" }}
+        >
+          Do with this what you will
+        </p>
         <br />
         <div className="text-left">
           <p style={{ color: "var(--description-color)" }}>

@@ -56,12 +56,23 @@ it is finished, then you should open the project with VS Code using this command
 ### Browser Tab / Header
 
 To update the browser tab header, go to the index.html file and type the name you want displayed.
-And then add your image to the /public folder and update the name of the image:
+And then add your image to the /public folder and update the name of the image. Once you completed your updates,
+then press
+
+```bash
+ctrl + s
+```
+
+at the same time to save your changes and within a few seconds you should see the updates in your browser:
 
 <p align="center">
   <img src="./public/tabHeader.png" alt="Logo">
 </p>
 
-![Logo](./public/tabHeader.png)
-
 ### Home page
+
+To update your pages, navigate to the pages folder within your projects directory and select the Home.jsx file:
+
+<p align="center">
+  <img src="./public/pages.png" alt="Logo">
+</p>
