@@ -62,4 +62,6 @@ And then add your image to the /public folder and update the name of the image:
   <img src="./public/tabHeader.png" alt="Logo">
 </p>
 
+![Logo](./public/tabHeader.png)
+
 ### Home page
