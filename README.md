@@ -58,8 +58,8 @@ it is finished, then you should open the project with VS Code using this command
 To update the browser tab header, go to the index.html file and type the name you want displayed.
 And then add your image to the /public folder and update the name of the image:
 
-<div style="text-align:center">
+<center>
     ![Logo](./public/tabHeader.png)
-</div>
+</center>
 
 ### Home page
