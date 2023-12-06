@@ -33,7 +33,7 @@ root directory
 
 ### Clone the Repository
 
-To clone this repository, use the following command by copying it and pasting it in a
+To clone this repository, use the following command by copying and pasting it in a
 terminal that you opened inside the folder where you want this stored:
 
         git clone https://github.com/Enjoyweaver/websiteTemplate.git
@@ -58,8 +58,8 @@ it is finished, then you should open the project with VS Code using this command
 To update the browser tab header, go to the index.html file and type the name you want displayed.
 And then add your image to the /public folder and update the name of the image:
 
-<div style="text-align:center">
-    ![Logo](./public/tabHeader.png)
-</div>
+<p align="center">
+  <img src="./public/tabHeader.png" alt="Logo">
+</p>
 
 ### Home page
