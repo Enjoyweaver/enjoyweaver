@@ -81,6 +81,11 @@ All three pages are similar, so the instructions below apply to each:
 #### Images and section width
 
 In either of the three pages, in the light-blue circle is where you can update the logo or remove it completely.
+
+<p align="center">
+  <img src="./public/body.png" alt="Logo">
+</p>
+
 If you want to remove the image, then delete this section:
 
 ```bash
