@@ -6,6 +6,7 @@ As well, you can customize the visual themes to your preference.
 ## Features
 
 - **Vite + React**: Utilizes Vite for fast and efficient development along with React for building UI components.
+- **Tailwind CSS**: Customiable and utility-first approach to styling your components
 - **Pages**: Includes Home, About, and Showcase pages as starting templates.
 - **Components**: A Navbar component is available for easy navigation.
 - **Customization**: Users can modify content, styles, and themes to create a personalized website.
@@ -46,10 +47,19 @@ To install the necessary dependencies, run:
         npm install
 
 This will install all the required packages and dependencies for the project. And once
-it is finished, then you should open the project with VS Code used the command in your terminal:
+it is finished, then you should open the project with VS Code using this command in your terminal:
 
         code .
 
-To update the browser tab header, go to the index.html file
+## Tutorial
 
-![Logo](./public/tabHeader.png)
+### Browser Tab / Header
+
+To update the browser tab header, go to the index.html file and type the name you want displayed.
+And then add your image to the /public folder and update the name of the image:
+
+<div style="text-align:center">
+    ![Logo](./public/tabHeader.png)
+</div>
+
+### Home page
