@@ -6,7 +6,7 @@ As well, you can customize the visual themes to your preference.
 ## Features
 
 - **Vite + React**: Utilizes Vite for fast and efficient development along with React for building UI components.
-- **Tailwind CSS**: Customiable and utility-first approach to styling your components
+- **Tailwind CSS**: Customisable and utility-first approach to styling your components
 - **Pages**: Includes Home, About, and Showcase pages as starting templates.
 - **Components**: A Navbar component is available for easy navigation.
 - **Customization**: Users can modify content, styles, and themes to create a personalized website.
@@ -69,10 +69,37 @@ at the same time to save your changes and within a few seconds you should see th
   <img src="./public/tabHeader.png" alt="Logo">
 </p>
 
-### Home page
+### Update pages
 
-To update your pages, navigate to the pages folder within your projects directory and select the Home.jsx file:
+To update your pages, navigate to the pages folder within your projects directory and select the file you want to update.
+All three pages are similar, so the instructions below apply to each:
 
 <p align="center">
   <img src="./public/pages.png" alt="Logo">
 </p>
+
+#### Images and section width
+
+In either of the three pages, in the light-blue circle is where you can update the logo or remove it completely.
+If you want to remove the image, then delete this section:
+
+```bash
+      <div className="w-1/3 text-center pl-10">
+        <img src="logo.png" alt="Logo" />
+      </div>
+```
+
+and then also delete the
+
+```bash
+w-2/3
+```
+
+as that is applying 2/3's of the page to the text below that is underlined in orange, and now it can take up the whole screen.
+If you want to split the pages, then put the image section at 1/2 and the text section below at 1/2 as well, or you can play around
+with the layout and adjust it how you prefer.
+
+#### Text color and size
+
+In the image above, the color of the text is underlined in yellow and the size of the text is underlined in red. You can adjust the colors
+in the App.css page where it lists all of the colors for the themes.

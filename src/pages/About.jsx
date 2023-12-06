@@ -1,5 +1,3 @@
-// About.jsx
-
 const About = () => {
   return (
     <div className="pt-20 flex items-center">
