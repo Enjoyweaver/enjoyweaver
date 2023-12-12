@@ -9,7 +9,7 @@ export default function Home() {
             my name is
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            Michael Weaver
+            Michael Weaver,
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function Home() {
             the rest of my life
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            will be fueling my dreams
+            fueling my dreams.
           </div>
         </div>
       </div>
@@ -50,10 +50,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            if my dreams
+            if my dreams are
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            light my fire
+            not igniting my fire
           </div>
         </div>
       </div>
@@ -61,10 +61,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            burn without fuel (fall without trying)
+            burning without fuel
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            is failing to live
+            is failing to live.
           </div>
         </div>
       </div>
@@ -74,10 +74,9 @@ export default function Home() {
           <div className="left" style={{ color: "var(--header-color)" }}>
             to create, build, and
           </div>
-          <div
-            className="right"
-            style={{ color: "var(--content-color)" }}
-          ></div>
+          <div className="right" style={{ color: "var(--content-color)" }}>
+            fuel other fires
+          </div>
         </div>
       </div>
 

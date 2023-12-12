@@ -2,14 +2,14 @@ export default function About() {
   return (
     <div>
       <div className="pt-40 flex items-center">
-        <div className="w-1/2 pl-10 grid place-items-center">
+        <div className="w-1/2 pl-20 grid place-items-center">
           <img
-            src="logo.jpg"
+            src="me.png"
             alt="Logo"
             style={{ maxWidth: "100%", height: "auto", display: "block" }}
           />
         </div>
-        <div className="w-1/2 text-left pl-10" style={{ maxWidth: "800px" }}>
+        <div className="w-1/2 text-left" style={{ maxWidth: "800px" }}>
           <p
             className="text-left"
             style={{ color: "var(--header-color)", fontSize: "3rem" }}
@@ -19,9 +19,9 @@ export default function About() {
           <br></br>
           <p
             className="text-left"
-            style={{ color: "var(--header-color)", fontSize: "2rem" }}
+            style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
           >
-            Web3 Wanderer
+            Web3 Wanderer || Fantom Maxi || Risk Manager
           </p>
 
           <br></br>

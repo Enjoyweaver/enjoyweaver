@@ -7,7 +7,7 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <div className="section-in">
-              <img src="logo.png" alt="" />
+              <img src="logo1.png" alt="" />
             </div>
           </div>
         </div>
@@ -17,7 +17,7 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl2.jpg" alt="" />
+              <img src="indemnifi.png" alt="" />
             </div>
           </div>
         </div>
@@ -27,27 +27,27 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="" />
+              <img src="DAOveloped.png" alt="" />
             </div>
           </div>
         </div>
         <div className="hover-text">
-          <h2>Shy Portrait</h2>
+          <h2>DAoveloped</h2>
         </div>
         <div className="section-col">
           <div className="section">
             <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl4.jpg" alt="" />
+              <img src="DA.png" alt="" />
             </div>
           </div>
         </div>
         <div className="hover-text">
-          <h2>Skateboard Face</h2>
+          <h2>DAOsigner Apparel</h2>
         </div>
         <div className="section-col">
           <div className="section">
             <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl5.jpg" alt="" />
+              <img src="da.png" alt="" />
             </div>
           </div>
         </div>
