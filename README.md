@@ -59,21 +59,45 @@ Once VS Code opens, these are the files you should see:
   <img src="./public/files.png" alt="Logo">
 </p>
 
+## Viewing the website
+
+Open your terminal and run the command
+
+```bash
+npm run dev
+```
+
+which will create this below
+
+<p align="center">
+  <img src="./public/open.png" alt="Logo">
+</p>
+
+where you will need to hover over the "localhost" and press
+
+```bash
+ctrl + left-click
+```
+
+to open the website in your browser. Whenevever you are done editing your website,
+you just press the letter "q" in your terminal where you just opened the browser.
+
 ### Browser Tab / Header
 
 To update the browser tab header, go to the index.html file and type the name you want displayed.
-And then add your image to the /public folder and update the name of the image. Once you completed your updates,
-then press
+And then add your image to the /public folder and update the name of the image.
+
+<p align="center">
+  <img src="./public/tabHeader.png" alt="Logo">
+</p>
+
+Once you completed your updates, then press
 
 ```bash
 ctrl + s
 ```
 
 at the same time to save your changes and within a few seconds you should see the updates in your browser:
-
-<p align="center">
-  <img src="./public/tabHeader.png" alt="Logo">
-</p>
 
 ### Update pages
 

@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Define color schemes for different themes */
 
 /*
@@ -423,13 +430,6 @@ body {
   background-color: var(--background-color);
 }
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -591,46 +591,48 @@ p {
   transform-style: preserve-3d;
   transform: rotateY(0deg);
   transition: all 3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  &:hover .wrap {
-    transform: rotateY(-90deg);
-    cursor: pointer;
-  }
-  &:hover {
-    z-index: 1;
-  }
-  &:hover .left {
-    &:before {
-      width: 55%;
-    }
-  }
+}
 
-  .left {
-    width: 400px;
-    padding: 15px 20px;
-    text-align: right;
+.row:hover .wrap {
+  transform: rotateY(-90deg);
+  cursor: pointer;
+}
 
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    &:before {
-      content: "";
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      transition: width 1s ease-in-out;
-    }
-  }
-  .right {
-    width: 400px;
-    padding: 15px 20px;
-    text-align: left;
-    transform: rotateY(90deg);
-    transform-origin: left center;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
+.row:hover {
+  z-index: 1;
+}
+
+.row:hover .left:before {
+  width: 55%;
+}
+
+.left {
+  width: 400px;
+  padding: 15px 20px;
+  text-align: right;
+
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+.left:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  transition: width 1s ease-in-out;
+}
+
+.right {
+  width: 400px;
+  padding: 15px 20px;
+  text-align: left;
+  transform: rotateY(90deg);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 * {
