@@ -15,18 +15,18 @@ As well, you can customize the visual themes to your preference.
 
 ```plaintext
 root directory
-├── index.html         # Update website tab header and icon
+├── index.html                 # Update website tab header and icon
 ├── /src
-│   ├── App.jsx        # Manage pages and routes
-│   ├── App.css        # Handle themes and styles
+│   ├── App.jsx                # Manage pages and routes
+│   ├── App.css                # Handle themes and styles
 │   ├── /pages
 │   │   ├── Home.jsx           # Homepage template
 │   │   ├── About.jsx          # About page template
 │   │   └── Showcase.jsx       # Showcase page template
 │   └── /components
-│       └── Navbar.jsx        # Navigation component
-└── /public               # Image assets
-    └── logo.png
+│       └── Navbar.jsx         # Navigation component
+└── /public                    # Images
+    └── logo.png               # Add your images here
 ```
 
 ## Getting Started
@@ -101,16 +101,15 @@ at the same time to save your changes and within a few seconds you should see th
 
 ### Update pages
 
-To update your pages, navigate to the pages folder within your projects directory and select the file you want to update.
-All three pages are similar, so the instructions below apply to each:
+There are three different pages for you to work with and the instructions to update each are below:
 
 <p align="center">
   <img src="./public/pages.png" alt="Logo">
 </p>
 
-### Images and section width
+### Showcase
 
-In either of the three pages, in the light-blue circle is where you can update the logo or remove it completely.
+Here are the main places to update the Showcase page.
 
 <p align="center">
   <img src="./public/body.png" alt="Logo">
