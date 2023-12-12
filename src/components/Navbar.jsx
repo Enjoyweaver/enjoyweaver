@@ -37,6 +37,7 @@ export default function Navbar() {
               style={{
                 color: "var(--button-text)",
                 backgroundColor: "var(--button-background)",
+                fontSize: "1.2rem",
               }}
             >
               Select Theme
@@ -95,16 +96,6 @@ export default function Navbar() {
                 >
                   Ocean City
                 </button>
-
-                <button
-                  className="block w-full py-2 text-left px-4 styling-button-hover"
-                  style={{
-                    color: "#466cdd",
-                  }}
-                  onClick={() => selectTheme("styling")}
-                >
-                  Styling
-                </button>
                 <button
                   className="block w-full py-2 text-left px-4 coffee-button-hover"
                   style={{
@@ -161,7 +152,9 @@ export default function Navbar() {
             >
               <div className="effect-1"></div>
               <div className="effect-2"></div>
-              <span style={{ color: "var(--nav1)" }}>Home</span>
+              <span style={{ color: "var(--nav1)", fontSize: "1.2rem" }}>
+                Home
+              </span>
             </NavLink>
             <NavLink
               className="mr-10 NavLink product"
@@ -170,7 +163,9 @@ export default function Navbar() {
             >
               <div className="effect-1"></div>
               <div className="effect-2"></div>
-              <span style={{ color: "var(--nav2)" }}>About</span>
+              <span style={{ color: "var(--nav2)", fontSize: "1.2rem" }}>
+                About
+              </span>
             </NavLink>
             <NavLink
               className="mr-10 NavLink product"
@@ -179,7 +174,9 @@ export default function Navbar() {
             >
               <div className="effect-1"></div>
               <div className="effect-2"></div>
-              <span style={{ color: "var(--nav2)" }}>Showcase</span>
+              <span style={{ color: "var(--nav3)", fontSize: "1.2rem" }}>
+                Showcase
+              </span>
             </NavLink>
           </div>
         </nav>
@@ -301,7 +298,7 @@ export default function Navbar() {
           .neon-night-button-hover:hover {
             background: linear-gradient(260deg, #000000, #0D0D0D);
           }
-          .styling-button-hover:hover {
+          .cyberpunk-button-hover:hover {
             background: linear-gradient(260deg, #0A043C, #243B55);
           }
           .theme-dropdown-options {

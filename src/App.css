@@ -16,7 +16,6 @@ This is the default framework for the color schemes
 --hover-description-background;
 --effect-1;
 --effect-2;
---gradient;
 background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
     radial-gradient(circle at 80% 70%, var(--bac2), transparent),
     linear-gradient(to bottom right, var(--bac3), transparent),
@@ -31,9 +30,9 @@ background-repeat: no-repeat;
 
 :root {
   /* Default theme */
-  --nav1: #2270ac;
-  --nav2: #276594;
-  --nav3: #265f8a;
+  --nav1: #145b91;
+  --nav2: #154a72;
+  --nav3: #164468;
   --bac1: #1a759f;
   --bac2: #1e6091;
   --bac3: #82c0d3;
@@ -45,7 +44,6 @@ background-repeat: no-repeat;
   --hover-description-background: #092f41;
   --effect-1: #77d5f7;
   --effect-2: #52f7c8;
-  --gradient: linear-gradient(264deg, #82c0d3, #34a0a4, #52b69a);
   background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
     radial-gradient(circle at 80% 70%, var(--bac2), transparent),
     linear-gradient(to bottom right, var(--bac3), transparent),
@@ -62,14 +60,14 @@ background-repeat: no-repeat;
   /* Morning-themed colors */
   --nav1: #f0e68c; /* Light khaki */
   --nav2: #fafad2; /* Light goldenrod yellow */
-  --nav3: #add8e6; /* Light blue */
+  --nav3: #117fa3; /* Light blue */
   --bac1: #ffe4c4; /* Bisque */
   --bac2: #d3d3d3; /* Light gray */
   --bac3: #076381; /* Dark cyan */
   --bac4: #9ad0c2; /* Light turquoise */
   --bac5: #57cc99; /* Medium aquamarine */
   --header-color: #076381; /* Dark cyan */
-  --description-color: #9ad0c2; /* Light turquoise */
+  --description-color: #40aa8e; /* Light turquoise */
   --content-color: #fafad2; /* Light goldenrod yellow */
   --hover-description-background: #57cc99; /* Medium aquamarine */
   --effect-1: #add8e6; /* Light blue */
@@ -82,15 +80,16 @@ background-repeat: no-repeat;
     linear-gradient(to bottom, var(--bac5), transparent);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  --button-text: #0b8199;
   --hover-text: #d8fafa; /* Light cyan */
   --hover-subtext: #f9faf5; /* Beige */
 }
 
 /* Lemonade theme */
 [data-theme="lemonade"] {
-  --nav1: #ffe4c4; /* Bisque */
-  --nav2: #ffd700; /* Gold */
-  --nav3: #f0e68c; /* Khaki */
+  --nav1: #d1a670; /* Bisque */
+  --nav2: #ceb00a; /* Gold */
+  --nav3: #dac938; /* Khaki */
   --bac1: #f3e598; /* Pale yellow, extracted from background-color */
   --bac2: #f5f5dc; /* Light beige, extracted from background-color */
   --bac3: #fff8dc; /* Pale apricot, extracted from background-color */
@@ -117,8 +116,8 @@ background-repeat: no-repeat;
 /* Mountain Dew theme */
 [data-theme="mountain-dew"] {
   --nav1: #2699bd; /* Mountain Dew Green */
-  --nav2: #a7e0f7; /* Ice Blue */
-  --nav3: #00739d; /* Dark Mountain Dew Green */
+  --nav2: #32aada; /* Ice Blue */
+  --nav3: #4ac0eb; /* Dark Mountain Dew Green */
   --bac1: #eef7ff; /* Light Ice Blue, extracted from background-color */
   --bac2: #f8f9fd; /* Pale Blue, extracted from background-color */
   --bac3: #f5f8fc; /* Very Light Ice Blue, extracted from background-color */
@@ -130,14 +129,13 @@ background-repeat: no-repeat;
   --button-text: #00739d; /* Dark Mountain Dew Green, assumed based on header-color */
   --hover-text: #00739d; /* Dark Mountain Dew Green */
   --hover-subtext: #2699bd; /* Mountain Dew Green */
-  --background-color: linear-gradient(
-    264deg,
-    var(--bac1),
-    var(--bac2),
-    var(--bac3)
-  );
-  --navbar-color: #a7e0f7; /* Ice Blue */
-  --footer-color: #e4f3f9; /* Lighter Ice Blue */
+  background-image: radial-gradient(circle at 10% 20%, var(--bac1), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac4), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   --hover-description-background: #d9e4f2; /* Very Light Ice Blue with slight transparency */
   --effect-1: #eef7ff; /* Light Ice Blue */
   --effect-2: #c6e1f2; /* Lighter Ice Blue */
@@ -152,16 +150,14 @@ background-repeat: no-repeat;
   --bac3: #7c93c3; /* Mid-blue */
   --bac4: #e3ecf5; /* Lighter blue, extracted from original background gradient */
   --bac5: #d1e7f3; /* Very light blue, extracted from original background gradient */
-  --header-color: #453f35;
-  --description-color: #6b6357;
-  --content-color: #8d8479;
-  --background-color: linear-gradient(259deg, #eef5ff, #9eb8d9, #7c93c3);
+  --header-color: #0d1d47;
+  --description-color: #1a2d96;
+  --content-color: #2f689c;
   --button-text: #3579d3;
-  --gradient: linear-gradient(259deg, var(--bac1), var(--bac2), var(--bac3));
-  background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
+  background-image: radial-gradient(circle at 10% 20%, var(--bac1), transparent),
     radial-gradient(circle at 80% 70%, var(--bac2), transparent),
     linear-gradient(to bottom right, var(--bac3), transparent),
-    linear-gradient(to top left, var(--bac1), transparent),
+    linear-gradient(to top left, var(--bac4), transparent),
     linear-gradient(to bottom, var(--bac5), transparent);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -180,17 +176,11 @@ background-repeat: no-repeat;
   --bac4: #986951; /* Lighter brown */
   --bac5: #543b35; /* Darker brown */
   --header-color: #402b1c; /* Dark brown */
-  --description-color: #825f49; /* Medium brown */
+  --description-color: #9b8272; /* Medium brown */
   --content-color: #dbc2a2; /* Light brown */
   --hover-description-background: #b2916e; /* Medium-light brown */
-  --effect-1: #986951; /* Lighter brown */
-  --effect-2: #402b1c; /* Dark brown */
-  --gradient: linear-gradient(
-    260deg,
-    #dbc2a2,
-    #6e4c38,
-    #402b1c
-  ); /* Gradient within brown tones */
+  --effect-1: #9869515e; /* Lighter brown */
+  --effect-2: #402b1c4d; /* Dark brown */
   background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
     radial-gradient(circle at 80% 70%, var(--bac2), transparent),
     linear-gradient(to bottom right, var(--bac3), transparent),
@@ -215,16 +205,10 @@ background-repeat: no-repeat;
   --bac5: #98fb98; /* Pale Green */
   --header-color: #2e8b57; /* Sea Green (darker turquoise) */
   --description-color: #6a5acd; /* Slate Blue (darker light blue) */
-  --content-color: #bdb76b; /* Dark Khaki */
+  --content-color: #dbb91f; /* Dark Khaki */
   --hover-description-background: #ffcc00; /* Vivid Yellow */
   --effect-1: #87cefa; /* Light Sky Blue */
   --effect-2: #7fffd4; /* Aquamarine */
-  --gradient: linear-gradient(
-    264deg,
-    #87cefa,
-    #ffa500,
-    #98fb98
-  ); /* Custom Gradient */
   background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
     radial-gradient(circle at 80% 70%, var(--bac2), transparent),
     linear-gradient(to bottom right, var(--bac3), transparent),
@@ -241,15 +225,10 @@ background-repeat: no-repeat;
 [data-theme="halloween"] {
   --header-color: #ff6b6b; /* Red */
   --description-color: #ffb166; /* Orange */
-  --content-color: #855757; /* Dark Gray */
-  --background-color: linear-gradient(
-    260deg,
-    #000000,
-    #3d0842
-  ); /* Black to Dark Purple */
+  --content-color: #470864; /* Dark Gray */
   --nav1: #ff8e8e; /* Light red */
   --nav2: #ffcc99; /* Light orange */
-  --nav3: #4d4d4d; /* Medium Gray */
+  --nav3: #fab433; /* Medium Gray */
   --bac1: #660000; /* Dark red */
   --bac2: #ff751a; /* Orange-red */
   --bac3: #1a1a1a; /* Dark Gray */
@@ -258,12 +237,6 @@ background-repeat: no-repeat;
   --hover-description-background: #ff8e8e; /* Light red (same as nav1) */
   --effect-1: #ff761a81; /* Orange-red (same as bac2) */
   --effect-2: #66006683; /* Purple (same as bac4) */
-  --gradient: linear-gradient(
-    260deg,
-    #ff8e8e,
-    #ff6b6b,
-    #262626
-  ); /* Gradient within Halloween colors */
   background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
     radial-gradient(circle at 80% 70%, var(--bac2), transparent),
     linear-gradient(to bottom right, var(--bac3), transparent),
@@ -286,17 +259,12 @@ background-repeat: no-repeat;
   --bac3: #808080; /* Gray */
   --bac4: #483d8b; /* Dark Slate Blue */
   --bac5: #dcdcdc; /* Gainsboro */
-  --header-color: #ffd700; /* Gold */
+  --header-color: #f7e063; /* Gold */
   --description-color: #99ffff; /* Light Cyan */
-  --content-color: #c0c0c0; /* Silver */
+  --content-color: #43c29c; /* Silver */
   --hover-description-background: #808080; /* Gray */
-  --effect-1: #483d8b; /* Dark Slate Blue */
-  --effect-2: #191970; /* Midnight Blue */
-  --gradient: linear-gradient(
-    260deg,
-    #000033,
-    #191970
-  ); /* Provided background color gradient */
+  --effect-1: #7766e252; /* Dark Slate Blue */
+  --effect-2: #4a701956; /* Midnight Blue */
   background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
     radial-gradient(circle at 80% 70%, var(--bac2), transparent),
     linear-gradient(to bottom right, var(--bac3), transparent),
@@ -311,69 +279,116 @@ background-repeat: no-repeat;
 
 /* Ocean City theme */
 [data-theme="ocean-city"] {
-  --header-color: #90d1f9;
-  --description-color: #e0e0e2;
-  --content-color: #dbf9ff;
-  --background-color: linear-gradient(260deg, #023e8a, #0077b6);
-  --text: #067288;
+  --nav1: #2270ac;
+  --nav2: #276594;
+  --nav3: #265f8a;
+  --bac1: #90d1f9; /* Ocean Blue */
+  --bac2: #e0e0e2; /* Light Grey */
+  --bac3: #dbf9ff; /* Ice Blue */
+  --bac4: #34a0a4; /* Teal */
+  --bac5: #52b69a; /* Greenish Turquoise */
+  --header-color: #3c8874; /* Light Turquoise */
+  --description-color: #478ac9; /* Light Grey */
+  --content-color: #dbf9ff; /* Ice Blue */
+  --hover-description-background: #092f41; /* Dark Teal */
+  --effect-1: #77d5f7; /* Sky Blue */
+  --effect-2: #52f7c8; /* Mint Green */
+  background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac1), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  --button-text: #90e7f8; /* Light Sky Blue */
+  --hover-text: #d8fafa; /* Light Cyan */
+  --hover-subtext: #f9faf5; /* Beige */
+  --text: #067288; /* Dark Cyan */
 }
 
 /* Street Light theme */
 [data-theme="street-light"] {
-  --header-color: #ffd700;
-  --description-color: #def5b9;
-  --content-color: #a9a9a9;
-  --background-color: linear-gradient(260deg, #333333, #000000);
-  --navbar-color: #696969;
-  --footer-color: #ffd700;
-  --hover-text: #f1e575;
-  --hover-subtext: #f1e575;
-  --hover-text: #f0dc6a;
-  --hover-subtext: #fdeb81;
+  --nav1: #fae25b; /* Gold */
+  --nav2: #def5b9; /* Pale Green */
+  --nav3: #a9a9a9; /* Dark Gray */
+  --bac1: #222222; /* Dark Gray */
+  --bac2: #2e2e2e; /* Slightly Darker Gray */
+  --bac3: #1a1a1a; /* Almost Black */
+  --bac4: #3f3f3f; /* Dim Gray */
+  --bac5: #fae25b; /* Gold */
+  --header-color: #fae25b; /* Gold */
+  --description-color: #f1b037; /* Pale Green */
+  --content-color: #2963a5; /* Dark Gray */
+  --hover-description-background: #222222; /* Darker Gray */
+  --effect-1: #e9979786; /* Dark Gray */
+  --effect-2: #f4f76069; /* Gray */
+  background-image: radial-gradient(circle at 10% 20%, var(--bac1), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac4), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  --button-text: #f0dc6a; /* Gold */
+  --hover-text: #fdeb81; /* Light Gold */
+  --hover-subtext: #f1e575; /* Yellow Green */
+  --text: #696969; /* Dim Gray */
 }
 
 /* Neon Night theme */
 [data-theme="neon-night"] {
-  --header-color: #00ff00;
-  --description-color: #ffff00;
-  --content-color: #ffffff;
-  --background-color: linear-gradient(260deg, #000000, #0d0d0d);
-  --hover-text: #fa38b0;
-  --hover-subtext: #c942f1;
-  --hover-text: #1ee0fa;
-  --hover-subtext: #0cf866;
+  --nav1: #ff00ff; /* Neon Magenta */
+  --nav2: #00ff00; /* Neon Green */
+  --nav3: #2b9dac; /* Neon Blue */
+  --bac1: #030363; /* Dark Blue */
+  --bac2: #4d024d; /* Dark Purple */
+  --bac3: #023b57; /* Deep Teal */
+  --bac4: #024d02; /* Dark Green */
+  --bac5: #570257; /* Dark Magenta */
+  --header-color: #ff00ff; /* Neon Magenta */
+  --description-color: #ffff00; /* Yellow */
+  --content-color: #17fd50; /* White */
+  --effect-1: #ff00ff52; /* Neon Magenta */
+  --effect-2: #00ff0054; /* Neon Green */
+  background-image: radial-gradient(circle at 10% 20%, var(--bac1), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac4), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  --button-text: #ff00ff; /* Neon Magenta */
+  --hover-text: #00ff00; /* Neon Green */
+  --hover-subtext: #0000ff; /* Neon Blue */
+  --text: #ffffff; /* White */
 }
 
-/* Styling theme color palette */
-[data-theme="styling"] {
-  --nav1: #4d8b67;
-  --nav2: #15ac10;
-  --nav3: #0a773b;
-  --nav4: #1aa733;
-  --nav5: #15b625;
-  --header-color: #466cdd;
-  --description-color: #6a0572;
-  --content-color: #ffb400;
-  --background-color: linear-gradient(
-    260deg,
-    #0a043c,
-    #243b55
-  ); /* Dark blue and chrome gradient */
-}
-
+/* Cyberpunk theme */
 [data-theme="cyberpunk"] {
-  --nav1: #00ff9f;
-  --nav2: #00b8ff;
-  --nav3: #001eff;
-  --nav4: #bd00ff;
-  --nav5: #d600ff;
-  --header-color: #262a10;
-  --description-color: #323716;
-  --content-color: #42481c;
-  --background-color: linear-gradient(264deg, #170013, #3a0040, #540067);
-  --hover-description-background: #baec03;
-  --hover-text: #a1b430;
-  --hover-subtext: #c9f30f;
+  --nav1: #00ffcc; /* Neon Cyan */
+  --nav2: #ff66ff; /* Neon Pink */
+  --nav3: #00ccff; /* Neon Blue */
+  --bac1: #1a001a; /* Dark Purple */
+  --bac2: #990033; /* Dark Red */
+  --bac3: #330033; /* Dark Purple */
+  --bac4: #990066; /* Dark Pink */
+  --bac5: #000000; /* Black */
+  --header-color: #ff66ff; /* Neon Pink */
+  --description-color: #0099ff; /* Neon Blue */
+  --content-color: #11ee80; /* White */
+  --effect-1: #00ffcc; /* Neon Cyan */
+  --effect-2: #ff66ff; /* Neon Pink */
+  background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac1), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  --button-text: #00ccff; /* Neon Blue */
+  --hover-text: #990066; /* Dark Pink */
+  --hover-subtext: #ff66ff; /* Neon Pink */
+  --text: #ffffff; /* White */
 }
 
 body {
@@ -397,12 +412,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-a:hover {
-  color: #535bf2;
-}
-
 nav {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid var(--header-color);
   margin-bottom: 7em;
 }
 
