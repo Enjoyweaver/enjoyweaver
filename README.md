@@ -53,6 +53,12 @@ it is finished, then you should open the project with VS Code using this command
 
 ## Tutorial
 
+Once VS Code opens, these are the files you should see:
+
+<p align="center">
+  <img src="./public/files.png" alt="Logo">
+</p>
+
 ### Browser Tab / Header
 
 To update the browser tab header, go to the index.html file and type the name you want displayed.
