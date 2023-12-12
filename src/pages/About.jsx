@@ -1,72 +1,43 @@
-import "../App.css";
-
-const ImageGallery = () => {
+export default function About() {
   return (
-    <div className="section-fluid-main">
-      <div className="section-row">
-        <div className="section-col">
-          <div className="section">
-            <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl1.jpg" alt="" />
-            </div>
+    <div>
+      <div className="pt-40 flex items-center">
+        <div className="w-1/2 pl-10 grid place-items-center">
+          <img
+            src="logo.jpg"
+            alt="Logo"
+            style={{ maxWidth: "100%", height: "auto", display: "block" }}
+          />
+        </div>
+        <div className="w-1/2 text-left pl-10" style={{ maxWidth: "800px" }}>
+          <p
+            className="text-left"
+            style={{ color: "var(--header-color)", fontSize: "3rem" }}
+          >
+            Michael Weaver
+          </p>
+          <br></br>
+          <p
+            className="text-left"
+            style={{ color: "var(--header-color)", fontSize: "2rem" }}
+          >
+            Web3 Wanderer
+          </p>
+
+          <br></br>
+          <div className="text-left">
+            <p style={{ color: "var(--description-color)" }}>
+              Showcase you. Showcase your capabilities, showcase your skills,
+              showcase your flexibility, showcase your creativity, showcase your
+              production, and showcase your passion.
+            </p>
+            <br />
+            <p style={{ color: "var(--content-color)" }}>
+              This is your template to springboard what you will showcase.
+            </p>
           </div>
-        </div>
-        <div className="hover-text">
-          <h2>Male Goofy Face</h2>
-        </div>
-        <div className="section-col">
-          <div className="section">
-            <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl2.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="hover-text">
-          <h2>Toy Pig</h2>
-        </div>
-        <div className="section-col">
-          <div className="section">
-            <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="hover-text">
-          <h2>Shy Portrait</h2>
-        </div>
-        <div className="section-col">
-          <div className="section">
-            <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl4.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="hover-text">
-          <h2>Skateboard Face</h2>
-        </div>
-        <div className="section-col">
-          <div className="section">
-            <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl5.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="hover-text">
-          <h2>Mirror Reflection</h2>
-        </div>
-        <div className="section-col">
-          <div className="section">
-            <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl6.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="hover-text">
-          <h2>Funny Bunny</h2>
         </div>
       </div>
     </div>
   );
-};
-
-export default ImageGallery;
+}

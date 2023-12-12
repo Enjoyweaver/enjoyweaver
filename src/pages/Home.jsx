@@ -6,10 +6,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            get an actual job
+            my name is
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            doing what you love
+            Michael Weaver
           </div>
         </div>
       </div>
@@ -17,10 +17,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            and make a living
+            but only a name
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            by being yourself
+            until my actions outweigh my words
           </div>
         </div>
       </div>
@@ -28,10 +28,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            you can&apos;t just let
+            my lips will speak of
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            other people define you
+            pursuing my passions
           </div>
         </div>
       </div>
@@ -39,10 +39,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            the rest of your life
+            the rest of my life
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            and say you will
+            will be fueling my dreams
           </div>
         </div>
       </div>
@@ -50,10 +50,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            be a joke, a failure.
+            if my dreams
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            follow your heart
+            light my fire
           </div>
         </div>
       </div>
@@ -61,10 +61,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            you will end up
+            burn without fuel (fall without trying)
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            happy and free, not
+            is failing to live
           </div>
         </div>
       </div>
@@ -72,11 +72,12 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            a starving artist.
+            to create, build, and
           </div>
-          <div className="right" style={{ color: "var(--content-color)" }}>
-            love you, art, and
-          </div>
+          <div
+            className="right"
+            style={{ color: "var(--content-color)" }}
+          ></div>
         </div>
       </div>
 
