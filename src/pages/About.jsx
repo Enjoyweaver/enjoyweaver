@@ -21,7 +21,7 @@ export default function About() {
             className="text-left"
             style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
           >
-            Web3 Wanderer || Fantom Maxi || Risk Manager
+            Web3 Wanderer || Fantom Maxi || Enterprise Risk Manager
           </p>
 
           <br></br>

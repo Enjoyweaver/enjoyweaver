@@ -6,8 +6,11 @@ const Showcase = () => {
       <div className="section-row">
         <div className="section-col">
           <div className="section">
-            <div className="section-in">
-              <img src="logo1.png" alt="" />
+            <div
+              className="section-in section-in-margin"
+              style={{ marginRight: "40px" }}
+            >
+              <img src="logo1.png" alt="" style={{ marginRight: "40px" }} />
             </div>
           </div>
         </div>
@@ -47,7 +50,7 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <div className="section-in">
-              <img src="da.png" alt="" />
+              <img src="DA.png" alt="" />
             </div>
           </div>
         </div>
