@@ -1,4 +1,5 @@
 import "../App.css";
+import videoFile from "/3DLogo2.mp4";
 
 const Showcase = () => {
   return (
@@ -6,11 +7,10 @@ const Showcase = () => {
       <div className="section-row">
         <div className="section-col">
           <div className="section">
-            <div
-              className="section-in section-in-margin"
-              style={{ marginRight: "40px" }}
-            >
-              <img src="logo1.png" alt="" style={{ marginRight: "40px" }} />
+            <div className="video-container">
+              <video autoPlay loop muted width="690" height="580">
+                <source src={videoFile} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
