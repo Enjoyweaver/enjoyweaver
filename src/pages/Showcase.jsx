@@ -1,5 +1,5 @@
 import "../App.css";
-import videoFile from "/3DLogo2.mp4";
+import videoFile from "/3Dlogo.mp4";
 
 const Showcase = () => {
   return (
@@ -7,10 +7,12 @@ const Showcase = () => {
       <div className="section-row">
         <div className="section-col">
           <div className="section">
-            <div className="video-container">
-              <video autoPlay loop muted width="690" height="580">
-                <source src={videoFile} type="video/mp4" />
-              </video>
+            <div>
+              <div className="video-container">
+                <video autoPlay loop muted width="690" height="580">
+                  <source src={videoFile} type="video/mp4" />
+                </video>
+              </div>
             </div>
           </div>
         </div>
@@ -19,8 +21,8 @@ const Showcase = () => {
         </div>
         <div className="section-col">
           <div className="section">
-            <div className="section-in">
-              <img src="indemnifi.png" alt="" />
+            <div className="video-container">
+              <img src="inDemniFi.png" alt="" />
             </div>
           </div>
         </div>
@@ -40,7 +42,7 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <div className="section-in">
-              <img src="DA.png" alt="" />
+              <img src="DAoveloped.png" alt="" />
             </div>
           </div>
         </div>

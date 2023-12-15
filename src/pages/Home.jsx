@@ -6,10 +6,10 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            my name is
+            I am
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            Michael Weaver,
+            only a name, and
           </div>
         </div>
       </div>
