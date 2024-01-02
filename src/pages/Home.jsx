@@ -9,7 +9,7 @@ export default function Home() {
             I am
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            only a name, and
+            Michael Weaver
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@ export default function Home() {
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
-            but only a name
+            only a name
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
             until my actions outweigh my words
@@ -42,7 +42,7 @@ export default function Home() {
             the rest of my life
           </div>
           <div className="right" style={{ color: "var(--content-color)" }}>
-            fueling my dreams.
+            fueling my dreams
           </div>
         </div>
       </div>
