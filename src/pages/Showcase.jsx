@@ -1,5 +1,7 @@
 import "../App.css";
-import videoFile from "/3Dlogo.mp4";
+import cpDAO from "/3Dlogo.mp4";
+import DA from "/DA.mp4";
+import sm from "/safememe.mp4";
 
 const Showcase = () => {
   return (
@@ -7,23 +9,34 @@ const Showcase = () => {
       <div className="section-row">
         <div className="section-col">
           <div className="section">
-            <div>
+            <a
+              href="https://twitter.com/CryptoPolicyDAO"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="video-container">
                 <video autoPlay loop muted width="690" height="580">
-                  <source src={videoFile} type="video/mp4" />
+                  <source src={cpDAO} type="video/mp4" />
                 </video>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div className="hover-text">
           <h2>Crypto Policy DAO</h2>
         </div>
+
         <div className="section-col">
           <div className="section">
-            <div className="video-container">
-              <img src="inDemniFi.png" alt="" />
-            </div>
+            <a
+              href="https://twitter.com/inDemniFi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="video-container">
+                <img src="inDemniFi.png" alt="" />
+              </div>
+            </a>
           </div>
         </div>
         <div className="hover-text">
@@ -31,19 +44,65 @@ const Showcase = () => {
         </div>
         <div className="section-col">
           <div className="section">
-            <div className="section-in">
-              <img src="DAOveloped.png" alt="" />
-            </div>
+            <a
+              href="https://twitter.com/DAOveloped"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="video-container">
+                <img src="DAOveloped.png" alt="" />
+              </div>
+            </a>
           </div>
         </div>
         <div className="hover-text">
-          <h2>DAoveloped</h2>
+          <h2>DAOveloped</h2>
         </div>
         <div className="section-col">
           <div className="section">
-            <div className="section-in">
-              <img src="DAoveloped.png" alt="" />
-            </div>
+            <a
+              href="https://twitter.com/_Collaborating "
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="video-container">
+                <img src="Collaborating.png" alt="" />
+              </div>
+            </a>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Collaborating</h2>
+        </div>
+        <div className="section-col">
+          <div className="section">
+            <a
+              href="https://twitter.com/FantomFluid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="video-container">
+                <img src="FantomFluid.png" alt="" />
+              </div>
+            </a>
+          </div>
+        </div>
+        <div className="hover-text">
+          <h2>Fantom Fluid</h2>
+        </div>
+        <div className="section-col">
+          <div className="section">
+            <a
+              href="https://twitter.com/DAOsignrApparel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="video-container">
+                <video autoPlay loop muted width="690" height="580">
+                  <source src={DA} type="video/mp4" />
+                </video>
+              </div>
+            </a>
           </div>
         </div>
         <div className="hover-text">
@@ -51,23 +110,37 @@ const Showcase = () => {
         </div>
         <div className="section-col">
           <div className="section">
-            <div className="section-in">
-              <img src="DA.png" alt="" />
-            </div>
+            <a
+              href="https://twitter.com/SafeMemeX"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="video-container">
+                <video autoPlay loop muted width="690" height="580">
+                  <source src={sm} type="video/mp4" />
+                </video>
+              </div>
+            </a>
           </div>
         </div>
         <div className="hover-text">
-          <h2>Mirror Reflection</h2>
+          <h2>SafeMeme</h2>
         </div>
         <div className="section-col">
           <div className="section">
-            <div className="section-in">
-              <img src="https://assets.codepen.io/1462889/sl6.jpg" alt="" />
-            </div>
+            <a
+              href="https://twitter.com/Motivate__Labs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="video-container">
+                <img src="motivatelogo.png" alt="" />
+              </div>
+            </a>
           </div>
         </div>
         <div className="hover-text">
-          <h2>Funny Bunny</h2>
+          <h2>Motivate Labs</h2>
         </div>
       </div>
     </div>

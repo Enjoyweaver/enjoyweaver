@@ -27,28 +27,34 @@ export default function About() {
           <br></br>
           <div className="text-left">
             <p style={{ color: "var(--description-color)" }}>
-              I first heard about Bitcoin from my brother in 2010 when he was
-              building computers as a career at the time. I couldnt understand
-              or comprehend it but he started minin g in 2011 and was earning
-              about 2 BTC a month when it was around $4 and would trade them for
-              coffee. Kinda unreal to think someone was already accepting
-              bitcoin payment for coffee in 2011, but regrettably my brother
-              never kept any bitcoin. So, long story short here, I missed out on
-              Bitcoin in 2011 but I wont let myself miss out on crypto anymore.
+              Academically my background is a little varied, though I went to
+              undergrad at the University of South Carolina and received a
+              bachelors in Political Science. Then I quickly got an MBA in Data
+              Analytics from the University of South Carolina as well. I then
+              became a Captive Insurance producer in 2014 and started my
+              expanding into Enterprise Risk Management in 2015. I went on to
+              earn the professional designations of Associate in Risk
+              Management, Certified Risk Manager, Chartered Property Casualty
+              Underwriter, and Certified Insurance Counselor.
             </p>
             <br />
             <p style={{ color: "var(--description-color)" }}>
-              But anyways, I later went to undergrad at the University of South
-              Carolina and received a bachelors in Political Science. Then I
-              quickly went on to get an MBA in Data Analytics from the
-              University of South Carolina as well. I then became a Captive
-              Insurance producer in 2014 and started my expanding into
-              Enterprise Risk Management in 2015. I went on to earn the
-              following professional designations:
+              As far as crypto, I first heard about Bitcoin from my brother in
+              2010 when he was building computers as a career at the time. I
+              couldnt understand or comprehend it but he started minin g in 2011
+              and was earning about 2 BTC a month when it was around $4 and
+              would trade them for coffee. Kinda unreal to think someone was
+              already accepting bitcoin payment for coffee in 2011, but
+              regrettably my brother never kept any bitcoin. So, long story
+              short here, I missed out on Bitcoin in 2011 but I wont let myself
+              miss out on crypto anymore.
             </p>
             <br />
             <p style={{ color: "var(--content-color)" }}>
-              This is your template to springboard what you will showcase.
+              I left Enterprise Risk Management in 2021 to pursue working in
+              crypto full time and you can check some of the projects in the
+              showcase tab. There you will be able to see that I am learning
+              Blender, which is a free and open-source 3D modeling software.
             </p>
           </div>
         </div>
