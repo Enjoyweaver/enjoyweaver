@@ -408,8 +408,6 @@ body {
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   background-color: #d1d1d1;
 
   font-synthesis: none;
@@ -425,7 +423,7 @@ nav {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   min-height: 100vh;
   background-color: var(--background-color);
 }

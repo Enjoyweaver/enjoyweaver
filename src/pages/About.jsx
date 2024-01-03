@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div>
-      <div className="pt-40 flex items-center">
+      <div className="pt-20 flex items-center">
         <div className="w-1/3 pl-20 grid place-items-center">
           <img
             src="me.png"
@@ -51,10 +51,11 @@ export default function About() {
             </p>
             <br />
             <p style={{ color: "var(--content-color)" }}>
-              I left Enterprise Risk Management in 2021 to pursue working in
-              crypto full time and you can check some of the projects in the
-              showcase tab. There you will be able to see that I am learning
-              Blender, which is a free and open-source 3D modeling software.
+              On the showcase tab are several of the projects that I am building
+              and will add more as they evolve. There you will be able to see
+              that I am learning Blender, which is a free and open-source 3D
+              modeling software that I cant get enough of, even though Im not
+              that good at it.
             </p>
           </div>
         </div>

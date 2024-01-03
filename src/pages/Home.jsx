@@ -2,7 +2,7 @@ import "../App.css";
 
 export default function Home() {
   return (
-    <div className="pillar" style={{ marginTop: "150px" }}>
+    <div className="pillar">
       <div className="row">
         <div className="wrap">
           <div className="left" style={{ color: "var(--header-color)" }}>
