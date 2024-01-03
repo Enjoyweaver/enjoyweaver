@@ -12,14 +12,14 @@ export default function About() {
         <div className="w-2/3 text-left" style={{ maxWidth: "1000px" }}>
           <p
             className="text-left"
-            style={{ color: "var(--header-color)", fontSize: "3rem" }}
+            style={{ color: "var(--header-color)", fontSize: "2rem" }}
           >
             Michael Weaver
           </p>
           <br></br>
           <p
             className="text-left"
-            style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
+            style={{ color: "var(--header-color)", fontSize: "1.3rem" }}
           >
             Web3 Wanderer || Fantom Maxi || Enterprise Risk Manager
           </p>

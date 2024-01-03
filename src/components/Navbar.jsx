@@ -27,8 +27,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="h-full">
-      <header className="w-full text-white p-4 fixed top-0 z-50">
+    <div>
+      <header className="w-full text-white p-4 fixed top-0 z-10">
         <nav className="container mx-auto flex justify-between items-center">
           <div className="relative">
             <button
@@ -43,9 +43,9 @@ export default function Navbar() {
               Select Theme
             </button>
             {showThemes && (
-              <div className="absolute z-10 top-10 right-0 bg-white border border-gray-300 rounded-md shadow-lg theme-dropdown-options">
+              <div className="absolute top-10 right-0 bg-white border border-gray-300 rounded-md shadow-lg theme-dropdown-options">
                 <button
-                  className="block w-full py-2 text-left px-4 original-button-hover"
+                  className="block w-full py-2 text-left original-button-hover"
                   style={{ color: "#067288" }}
                   onClick={() => selectTheme("original")}
                 >
