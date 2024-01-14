@@ -431,7 +431,7 @@ p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.2;
   color: #fff;
   margin: 0;
 }
@@ -439,7 +439,7 @@ p {
   position: relative;
   display: block;
   overflow: hidden;
-  width: calc(100% - 40px);
+  width: calc(60% - 40px);
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -588,15 +588,16 @@ p {
 .pillar {
   display: block;
   margin: 100px auto;
-  width: 300px;
-  transform: translateX(-200px);
-  perspective: 1900px;
+  width: 600px;
+  transform: translateX(0px);
+  perspective: 900px;
+  line-height: 0.8;
 }
 
 .wrap {
   display: flex;
   transform: rotateY(0deg);
-  transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 1s cubic-bezier(0, 0, 0, 1);
   transform-style: preserve-3d;
 }
 
@@ -609,7 +610,7 @@ p {
   font-weight: bold;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
-  transition: all 3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 3s cubic-bezier(0, 0, 0, 0);
 }
 
 .row:hover .wrap {
@@ -622,14 +623,13 @@ p {
 }
 
 .row:hover .left:before {
-  width: 55%;
+  width: 100%;
 }
 
 .left {
   width: 500px;
-  padding: 15px 20px;
+  padding: 15px;
   text-align: right;
-
   transform-style: preserve-3d;
   transform: rotateY(0deg);
 }
@@ -641,12 +641,11 @@ p {
   left: 0;
   width: 50%;
   height: 100%;
-  transition: width 1s ease-in-out;
 }
 
 .right {
   width: 900px;
-  padding: 15px 20px;
+  padding: 10px 20px;
   text-align: left;
   transform: rotateY(90deg);
   transform-origin: left center;

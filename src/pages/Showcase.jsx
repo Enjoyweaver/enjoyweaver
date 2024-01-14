@@ -129,18 +129,18 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <a
-              href="https://twitter.com/Motivate__Labs"
+              href="https://twitter.com/MotivationaLabs"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div className="video-container">
-                <img src="motivatelogo.png" alt="" />
+                <img src="motivational.png" alt="" />
               </div>
             </a>
           </div>
         </div>
         <div className="hover-text">
-          <h2>Motivate Labs</h2>
+          <h2>Motivational Labs</h2>
         </div>
       </div>
     </div>

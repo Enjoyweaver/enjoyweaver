@@ -9,7 +9,7 @@ export default function About() {
             style={{ maxWidth: "100%", height: "auto", display: "block" }}
           />
         </div>
-        <div className="w-2/3 text-left" style={{ maxWidth: "1000px" }}>
+        <div className="w-2/3 text-left" style={{ maxWidth: "800px" }}>
           <p
             className="text-left"
             style={{ color: "var(--header-color)", fontSize: "2rem" }}
