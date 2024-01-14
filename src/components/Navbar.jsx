@@ -45,7 +45,7 @@ export default function Navbar() {
             {showThemes && (
               <div className="absolute top-10 right-0 bg-white border border-gray-300 rounded-md shadow-lg theme-dropdown-options">
                 <button
-                  className="block w-full py-2 text-left original-button-hover"
+                  className="block w-full py-2 text-left px-4 original-button-hover"
                   style={{ color: "#067288" }}
                   onClick={() => selectTheme("original")}
                 >
@@ -259,7 +259,7 @@ export default function Navbar() {
         }
         
         .original-button-hover:hover {
-            background-color: #f1faee;
+            background-color: #82c0d3;
           }
           .morning-button-hover:hover {
             background: linear-gradient(260deg, #f0f5ff, #afc9ff, #e0ecff);
