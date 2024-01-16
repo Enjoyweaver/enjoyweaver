@@ -398,10 +398,6 @@ background-repeat: no-repeat;
   --text: #ffffff; /* White */
 }
 
-body {
-  background: var(--background-color);
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -423,7 +419,7 @@ nav {
 
 body {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 100vh; /* Change this line */
   background-color: var(--background-color);
 }
 
@@ -586,12 +582,15 @@ p {
 }
 
 .pillar {
-  display: block;
-  margin: 100px auto;
-  width: 600px;
+  display: flex; /* Use flex display for centering */
+  flex-direction: column; /* Arrange children in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  margin-top: 6rem;
   transform: translateX(0px);
   perspective: 900px;
-  line-height: 0.8;
+  line-height: 1.9;
+  text-align: center;
 }
 
 .wrap {
@@ -628,7 +627,6 @@ p {
 
 .left {
   width: 500px;
-  padding: 15px;
   text-align: right;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
@@ -644,8 +642,7 @@ p {
 }
 
 .right {
-  width: 900px;
-  padding: 10px 20px;
+  width: 500px;
   text-align: left;
   transform: rotateY(90deg);
   transform-origin: left center;

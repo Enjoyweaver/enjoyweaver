@@ -178,6 +178,17 @@ export default function Navbar() {
                 Showcase
               </span>
             </NavLink>
+            <NavLink
+              className="mr-10 NavLink product"
+              to="/data"
+              activeClassName="active-link"
+            >
+              <div className="effect-1"></div>
+              <div className="effect-2"></div>
+              <span style={{ color: "var(--nav3)", fontSize: "1.2rem" }}>
+                Data Analysis
+              </span>
+            </NavLink>
           </div>
         </nav>
       </header>
