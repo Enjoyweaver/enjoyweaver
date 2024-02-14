@@ -660,6 +660,10 @@ p {
 }
 
 @media (max-width: 768px) {
+  .pillar {
+    margin-top: 2rem; /* Reduce margin-top for better spacing */
+  }
+
   .row {
     /* Adjust styles for rows on mobile */
     width: 100%; /* Make rows full-width */
