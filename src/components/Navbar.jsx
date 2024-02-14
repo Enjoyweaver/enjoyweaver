@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import "../App.css";
 
 export default function Navbar() {
   const [showThemes, setShowThemes] = useState(false);
@@ -316,6 +315,25 @@ export default function Navbar() {
             max-height: 400px; /* Set your desired max height */
             overflow-y: auto;
           }
+          @media only screen and (max-width: 768px) {
+
+            .header {
+              padding: 1rem; /* Decrease padding */
+            }
+
+            .NavLink {
+              margin-right: 0.5rem; /* Decrease margin between nav links */
+            }
+
+            .NavLink > span {
+              font-size: 1rem; /* Decrease font size of nav link text */
+            }
+
+            .theme-dropdown-options {
+              max-height: 200px; /* Decrease max height of theme dropdown */
+            }
+          }
+          
         `}
       </style>
     </div>
