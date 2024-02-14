@@ -660,21 +660,9 @@ p {
 }
 
 @media (max-width: 768px) {
-  .pillar {
-    /* Adjust styles for smaller screens here */
-    max-width: 80%; /* Limit width to 80% on mobile */
-    margin-top: 4rem; /* Reduce margin-top for better spacing */
-  }
-
   .row {
     /* Adjust styles for rows on mobile */
     width: 100%; /* Make rows full-width */
-    font-size: 1.3em; /* Reduce font size slightly */
-  }
-
-  .left,
-  .right {
-    /* Adjust text width for better readability */
-    width: 100%; /* Make content full-width */
+    font-size: 0.8em; /* Reduce font size slightly */
   }
 }
