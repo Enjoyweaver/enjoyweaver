@@ -156,7 +156,7 @@ export default function Navbar() {
               </span>
             </NavLink>
             <NavLink
-              className="mr-10 NavLink product"
+              className="mr-10 NavLink Navtext product"
               to="/About"
               activeClassName="active-link"
             >
@@ -167,7 +167,7 @@ export default function Navbar() {
               </span>
             </NavLink>
             <NavLink
-              className="mr-10 NavLink product"
+              className="mr-10 NavLink Navtext product"
               to="/Showcase"
               activeClassName="active-link"
             >
@@ -178,7 +178,7 @@ export default function Navbar() {
               </span>
             </NavLink>
             <NavLink
-              className="mr-10 NavLink product"
+              className="mr-10 NavLink Navtext product"
               to="/data"
               activeClassName="active-link"
             >
@@ -321,7 +321,7 @@ export default function Navbar() {
               padding: 1rem; /* Decrease padding */
             }
 
-            .NavLink {
+            .Navtext {
               margin-right: 0.5rem; /* Decrease margin between nav links */
               font-size: 0.8rem; /* Decrease font size of nav link text */
             }
