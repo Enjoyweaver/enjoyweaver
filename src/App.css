@@ -669,4 +669,7 @@ p {
     width: 120%; /* Make rows full-width */
     font-size: 0.8em; /* Reduce font size slightly */
   }
+  .wrap {
+    margin-bottom: 0.25rem;
+  }
 }
