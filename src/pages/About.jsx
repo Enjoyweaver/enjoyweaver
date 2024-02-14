@@ -6,7 +6,7 @@ export default function About() {
           <img
             src="me.png"
             alt="Logo"
-            style={{ maxWidth: "100%", height: "auto", display: "block" }}
+            style={{ maxWidth: "80%", height: "auto", display: "block" }}
           />
         </div>
         <div className="w-2/3 text-left" style={{ maxWidth: "800px" }}>
@@ -21,7 +21,7 @@ export default function About() {
             className="text-left"
             style={{ color: "var(--header-color)", fontSize: "1.3rem" }}
           >
-            Web3 Wanderer || Fantom Maxi || Enterprise Risk Manager
+            Web3 Wanderer || Insurance Underwriter || Enterprise Risk Manager
           </p>
 
           <br></br>
