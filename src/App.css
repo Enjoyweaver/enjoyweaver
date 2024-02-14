@@ -670,6 +670,6 @@ p {
     font-size: 0.8em; /* Reduce font size slightly */
   }
   .wrap {
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
   }
 }
