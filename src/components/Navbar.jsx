@@ -326,7 +326,7 @@ export default function Navbar() {
             }
 
             .NavLink > span {
-              font-size: 1rem; /* Decrease font size of nav link text */
+              font-size: 0.8rem; /* Decrease font size of nav link text */
             }
 
             .theme-dropdown-options {
