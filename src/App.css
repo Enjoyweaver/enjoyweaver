@@ -661,7 +661,7 @@ p {
 
 @media (max-width: 768px) {
   .pillar {
-    margin-top: 2rem; /* Reduce margin-top for better spacing */
+    margin-top: 6rem; /* Reduce margin-top for better spacing */
   }
 
   .row {
