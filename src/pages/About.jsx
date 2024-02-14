@@ -25,7 +25,7 @@ export default function About() {
           </p>
 
           <br></br>
-          <div className="text-left">
+          <div className="text-left mobilefont">
             <p style={{ color: "var(--description-color)" }}>
               Academically my background is a little varied, though I went to
               undergrad at the University of South Carolina and received a
@@ -60,6 +60,16 @@ export default function About() {
           </div>
         </div>
       </div>
+      <style>
+        {`
+        @media (max-width: 768px) {
+          .mobilefont {
+            font-size: 0.8rem;
+          }
+        }
+
+      `}
+      </style>
     </div>
   );
 }
