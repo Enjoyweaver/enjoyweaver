@@ -144,7 +144,7 @@ export default function Navbar() {
           </div>
           <div>
             <NavLink
-              className="mr-10 NavLink product"
+              className="NavLink Navtext product"
               to="/"
               activeClassName="active-link"
             >
@@ -153,7 +153,7 @@ export default function Navbar() {
               <span style={{ color: "var(--nav1)" }}>Home</span>
             </NavLink>
             <NavLink
-              className="mr-10 NavLink Navtext product"
+              className=" NavLink Navtext product"
               to="/About"
               activeClassName="active-link"
             >
@@ -162,7 +162,7 @@ export default function Navbar() {
               <span style={{ color: "var(--nav2)" }}>About</span>
             </NavLink>
             <NavLink
-              className="mr-10 NavLink Navtext product"
+              className=" NavLink Navtext product"
               to="/Showcase"
               activeClassName="active-link"
             >
@@ -171,7 +171,7 @@ export default function Navbar() {
               <span style={{ color: "var(--nav3)" }}>Showcase</span>
             </NavLink>
             <NavLink
-              className="mr-10 NavLink Navtext product"
+              className=" NavLink Navtext product"
               to="/data"
               activeClassName="active-link"
             >
@@ -190,6 +190,10 @@ export default function Navbar() {
         
         .product {
           position: relative;
+        }
+
+        .Navtext {
+          margin-right: 1rem;
         }
         
         .header {
@@ -310,7 +314,7 @@ export default function Navbar() {
 
 
             .Navtext {
-            
+              margin-right: 0.5rem; /* Add space between nav links */
               font-size: 0.8rem; /* Decrease font size of nav link text */
             }
 
