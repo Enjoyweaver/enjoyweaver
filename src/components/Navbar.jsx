@@ -36,7 +36,6 @@ export default function Navbar() {
               style={{
                 color: "var(--button-text)",
                 backgroundColor: "var(--button-background)",
-                fontSize: "1.2rem",
               }}
             >
               Select Theme
@@ -151,9 +150,7 @@ export default function Navbar() {
             >
               <div className="effect-1"></div>
               <div className="effect-2"></div>
-              <span style={{ color: "var(--nav1)", fontSize: "1.2rem" }}>
-                Home
-              </span>
+              <span style={{ color: "var(--nav1)" }}>Home</span>
             </NavLink>
             <NavLink
               className="mr-10 NavLink Navtext product"
@@ -162,9 +159,7 @@ export default function Navbar() {
             >
               <div className="effect-1"></div>
               <div className="effect-2"></div>
-              <span style={{ color: "var(--nav2)", fontSize: "1.2rem" }}>
-                About
-              </span>
+              <span style={{ color: "var(--nav2)" }}>About</span>
             </NavLink>
             <NavLink
               className="mr-10 NavLink Navtext product"
@@ -173,9 +168,7 @@ export default function Navbar() {
             >
               <div className="effect-1"></div>
               <div className="effect-2"></div>
-              <span style={{ color: "var(--nav3)", fontSize: "1.2rem" }}>
-                Showcase
-              </span>
+              <span style={{ color: "var(--nav3)" }}>Showcase</span>
             </NavLink>
             <NavLink
               className="mr-10 NavLink Navtext product"
@@ -184,9 +177,7 @@ export default function Navbar() {
             >
               <div className="effect-1"></div>
               <div className="effect-2"></div>
-              <span style={{ color: "var(--nav3)", fontSize: "1.2rem" }}>
-                Data Analysis
-              </span>
+              <span style={{ color: "var(--nav3)" }}>Data Analysis</span>
             </NavLink>
           </div>
         </nav>
@@ -317,22 +308,12 @@ export default function Navbar() {
           }
           @media only screen and (max-width: 768px) {
 
-            .header {
-              padding: 1rem; /* Decrease padding */
-            }
 
             .Navtext {
-              margin-right: 0.5rem; /* Decrease margin between nav links */
+            
               font-size: 0.8rem; /* Decrease font size of nav link text */
             }
 
-            .NavLink > span {
-              font-size: 0.8rem; /* Decrease font size of nav link text */
-            }
-
-            .theme-dropdown-options {
-              max-height: 200px; /* Decrease max height of theme dropdown */
-            }
           }
           
         `}
