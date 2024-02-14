@@ -323,6 +323,7 @@ export default function Navbar() {
 
             .NavLink {
               margin-right: 0.5rem; /* Decrease margin between nav links */
+              font-size: 0.8rem; /* Decrease font size of nav link text */
             }
 
             .NavLink > span {
