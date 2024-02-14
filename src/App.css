@@ -661,12 +661,12 @@ p {
 
 @media (max-width: 768px) {
   .pillar {
-    margin-top: 6rem; /* Reduce margin-top for better spacing */
+    margin-top: 8rem; /* Reduce margin-top for better spacing */
   }
 
   .row {
     /* Adjust styles for rows on mobile */
-    width: 100%; /* Make rows full-width */
+    width: 120%; /* Make rows full-width */
     font-size: 0.8em; /* Reduce font size slightly */
   }
 }
