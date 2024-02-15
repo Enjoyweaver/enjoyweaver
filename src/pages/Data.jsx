@@ -44,8 +44,8 @@ export default function About() {
             <center>
               <iframe
                 title="Report Section"
-                width="800vw"
-                height="600vh"
+                width="580vw"
+                height="400vh"
                 src="https://app.powerbi.com/view?r=eyJrIjoiZDJmYmQ2NmItYmRkYi00M2QyLWJmMWUtNDUwODNlY2I5M2MxIiwidCI6ImNkMjEzNjNiLWNmMDMtNDcwMi1iOTliLWUxZDJlNThhZTk2ZiIsImMiOjZ9"
                 allowFullScreen="true"
               ></iframe>
@@ -79,8 +79,8 @@ export default function About() {
             <center>
               <iframe
                 title="Report Section"
-                width="800vw"
-                height="600vh"
+                width="580vw"
+                height="400vh"
                 src="https://app.powerbi.com/view?r=eyJrIjoiZWMxZGM5NTgtOGFhMS00ZjliLWI4NTMtNjAwYjc4YTc3YzQ4IiwidCI6ImNkMjEzNjNiLWNmMDMtNDcwMi1iOTliLWUxZDJlNThhZTk2ZiIsImMiOjZ9&pageName=ReportSection29b208b81918bc1e3da4"
                 allowFullScreen="true"
               ></iframe>
@@ -113,8 +113,8 @@ export default function About() {
             <center>
               <iframe
                 title="Just Brew It DAO Dashboard"
-                width="800vw"
-                height="600vh"
+                width="580vw"
+                height="400vh"
                 src="https://app.powerbi.com/view?r=eyJrIjoiOTAzZmFjY2EtMWY5ZS00NTc4LTg4MTItZDI5MmY2MjM3MzczIiwidCI6IjRiMmE0YjE5LWQxMzUtNDIwZS04YmIyLWIxY2QyMzg5OThjYyIsImMiOjF9&pageName=ReportSection1d4c14bfcc63d48c0ad0"
                 allowFullScreen="true"
               ></iframe>
@@ -144,8 +144,8 @@ export default function About() {
             <center>
               <iframe
                 title="Gitcoin"
-                width="800vw"
-                height="600vh"
+                width="5800vw"
+                height="400vh"
                 src="https://app.powerbi.com/view?r=eyJrIjoiZDE2NjU4YjItMzk5NS00MzcyLWJjNzctMTI3ZjUxZDI5MTQ4IiwidCI6ImNkMjEzNjNiLWNmMDMtNDcwMi1iOTliLWUxZDJlNThhZTk2ZiIsImMiOjZ9&embedImagePlaceholder=true&pageName=ReportSection6bcd8f48098809949820"
                 allowFullScreen="true"
               ></iframe>
