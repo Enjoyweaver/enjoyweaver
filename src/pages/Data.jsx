@@ -14,7 +14,7 @@ export default function About() {
         </p>
         <p
           className="text-center header2"
-          style={{ color: "var(--description-color)", fontSize: "1.7rem" }}
+          style={{ color: "var(--description-color)" }}
         >
           All of the Power BI reports below are best viewed on a desktop
         </p>
@@ -23,13 +23,13 @@ export default function About() {
         <div className="text-center justify-center">
           <p
             className="text-center header3"
-            style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
+            style={{ color: "var(--header-color)" }}
           >
             State of Cryptocurrency Underwriting
           </p>
           <br />
           <p
-            className="text-center header3"
+            className="text-center "
             style={{ color: "var(--description-color)" }}
           >
             Below is the State of Cryptocurrency Underwriting report, though it
@@ -55,14 +55,14 @@ export default function About() {
           <br />
           <br />
           <p
-            className="text-center"
-            style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
+            className="text-center header3"
+            style={{ color: "var(--header-color)" }}
           >
             Crypto Auditor Dashboard
           </p>
           <br />
           <p
-            className="text-center header3"
+            className="text-center"
             style={{ color: "var(--description-color)" }}
           >
             This is the start of the Auditor Ranking Dashboard, though we are
@@ -90,14 +90,14 @@ export default function About() {
           <br />
           <br />
           <p
-            className="text-center"
-            style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
+            className="text-center header3"
+            style={{ color: "var(--header-color)" }}
           >
             Just Brew It DAO - NFT Tokenomics and Brewery Funding Model
           </p>
           <br />
           <p
-            className="text-center header3"
+            className="text-center "
             style={{ color: "var(--description-color)" }}
           >
             This model illustrates the NFT funding scenarios and how that will
@@ -124,8 +124,8 @@ export default function About() {
           <br />
           <br />
           <p
-            className="text-center"
-            style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
+            className="text-center header3"
+            style={{ color: "var(--header-color)" }}
           >
             Gitcoin Grants
           </p>
@@ -157,6 +157,15 @@ export default function About() {
       </div>
       <style>
         {`
+
+        .header2 {
+           font-size: 1.7rem ;
+        }
+
+        .header3 {
+          font-size: 1.5rem;
+        }
+
           @media only screen and (max-width: 768px) {
             .header1 {
               font-size: 1.5rem;
