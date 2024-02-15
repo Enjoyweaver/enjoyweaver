@@ -143,6 +143,18 @@ export default function About() {
           <br />
         </div>
       </div>
+      <style>
+        {`
+@media (max-width: 768px) {
+  .text-center,
+  .text-center p,
+  .text-center iframe {
+    font-size: 1.2rem;
+  }
+}
+
+        `}
+      </style>
     </div>
   );
 }
