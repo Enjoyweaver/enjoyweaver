@@ -28,7 +28,10 @@ export default function About() {
             State of Cryptocurrency Underwriting
           </p>
           <br />
-          <p style={{ color: "var(--description-color)" }}>
+          <p
+            className="text-center header3"
+            style={{ color: "var(--description-color)" }}
+          >
             Below is the State of Cryptocurrency Underwriting report, though it
             is a live report and will be updated as exploit and auditor data is
             added to the database. The report is built in Power BI and is
@@ -58,7 +61,10 @@ export default function About() {
             Crypto Auditor Dashboard
           </p>
           <br />
-          <p style={{ color: "var(--description-color)" }}>
+          <p
+            className="text-center header3"
+            style={{ color: "var(--description-color)" }}
+          >
             This is the start of the Auditor Ranking Dashboard, though we are
             working on continually expanding it. We are also working on a way to
             make it more interactive, so that you can sort and filter the data
@@ -90,7 +96,10 @@ export default function About() {
             Just Brew It DAO - NFT Tokenomics and Brewery Funding Model
           </p>
           <br />
-          <p style={{ color: "var(--description-color)" }}>
+          <p
+            className="text-center header3"
+            style={{ color: "var(--description-color)" }}
+          >
             This model illustrates the NFT funding scenarios and how that will
             affect the design and construction of the brewery. Based on how much
             Fantom is raised and when we sell it, we will be able to determine
@@ -121,7 +130,10 @@ export default function About() {
             Gitcoin Grants
           </p>
           <br />
-          <p style={{ color: "var(--description-color)" }}>
+          <p
+            className="text-center header3"
+            style={{ color: "var(--description-color)" }}
+          >
             This model illustrates the funding sent to Gitcoin and the funding
             Gitcoin has given out over time. The money sent to Gitcoin is mostly
             inflated due to memecoins and incorrect pricing of a few tokens,
