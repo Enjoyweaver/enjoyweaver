@@ -29,7 +29,7 @@ export default function About() {
           </p>
           <br />
           <p
-            className="text-center "
+            className="text-center text1"
             style={{ color: "var(--description-color)" }}
           >
             Below is the State of Cryptocurrency Underwriting report, though it
@@ -62,7 +62,7 @@ export default function About() {
           </p>
           <br />
           <p
-            className="text-center"
+            className="text-center text1"
             style={{ color: "var(--description-color)" }}
           >
             This is the start of the Auditor Ranking Dashboard, though we are
@@ -97,7 +97,7 @@ export default function About() {
           </p>
           <br />
           <p
-            className="text-center "
+            className="text-center text1"
             style={{ color: "var(--description-color)" }}
           >
             This model illustrates the NFT funding scenarios and how that will
@@ -131,7 +131,7 @@ export default function About() {
           </p>
           <br />
           <p
-            className="text-center"
+            className="text-center text1"
             style={{ color: "var(--description-color)" }}
           >
             This model illustrates the funding sent to Gitcoin and the funding
@@ -172,7 +172,8 @@ export default function About() {
           .header2,
           .header3 {
             font-size: 1.3rem;
-            max-width: 100%;
+            text-align: center;
+            max-width: 80%;
           }
         }
 
@@ -183,7 +184,13 @@ export default function About() {
           .header2,
           .header3 {
             font-size: 1.1rem;
-            max-width: 100%;
+            text-align: center;
+            max-width: 80%;
+          }
+          .text1 {
+            font-size: 1rem;
+            text-align: center;
+            max-width: 80%;
           }
         }
 

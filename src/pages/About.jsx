@@ -12,7 +12,12 @@ export default function About() {
         >
           Michael Weaver
         </p>
-        <img src="me.png" alt="Logo" className="w-full sm:w-1/3" />
+        <img
+          src="me.png"
+          alt="Logo"
+          className="w-full sm:w-1/2"
+          style={{ maxWidth: "200px" }}
+        />
 
         <br />
         <p
