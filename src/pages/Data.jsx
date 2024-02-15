@@ -131,7 +131,7 @@ export default function About() {
           </p>
           <br />
           <p
-            className="text-center header3"
+            className="text-center"
             style={{ color: "var(--description-color)" }}
           >
             This model illustrates the funding sent to Gitcoin and the funding
@@ -157,53 +157,42 @@ export default function About() {
       </div>
       <style>
         {`
-
         .header2 {
-           font-size: 1.7rem ;
+          font-size: 1.7rem;
         }
 
         .header3 {
           font-size: 1.5rem;
         }
 
-          @media only screen and (max-width: 768px) {
-            .header1 {
-              font-size: 1.5rem;
-            }
-            .header2 {
-              font-size: 1.3rem;
-              max-width: 80%;
-            }
-            .header3 {
-              font-size: 1.1rem;
-              max-width: 80%;
-            }
+        @media only screen and (max-width: 768px) {
+          .header1 {
+            font-size: 1.5rem;
           }
-
-            @media only screen and (max-width: 600px) {
-            .header1 {
-              font-size: 1.5rem;
-            }
-
-            .header2 {
-              font-size: 1.3rem;
-              max-width: 80%;
-            }
-
-            .header3 {
-              font-size: 1.1rem;
-              max-width: 80%;
-            }
-
-            @media only screen and (max-width: 500px) {
-              iframe {
-                width: 500px; /* Full width on mobile */
-                height: 300px; /* Fixed height on mobile */
-              }
-            }
-
+          .header2,
+          .header3 {
+            font-size: 1.3rem;
+            max-width: 80%;
           }
+        }
 
+        @media only screen and (max-width: 600px) {
+          .header1 {
+            font-size: 1.3rem;
+          }
+          .header2,
+          .header3 {
+            font-size: 1.1rem;
+            max-width: 80%;
+          }
+        }
+
+        @media only screen and (max-width: 500px) {
+          iframe {
+            width: 100%; /* Full width on mobile */
+            height: 300px; /* Fixed height on mobile */
+          }
+        }
         `}
       </style>
     </div>
