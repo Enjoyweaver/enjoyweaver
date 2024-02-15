@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <div className="pt-20 flex items-center justify-center">
-      <div className="text-center" style={{ maxWidth: "900px" }}>
+    <div className="pt-20 flex text-center items-center justify-center">
+      <div className="text-center" style={{ maxWidth: "800px" }}>
         <p
           className="text-center header1"
           style={{
@@ -16,7 +16,7 @@ export default function About() {
           className="text-center header2"
           style={{ color: "var(--description-color)" }}
         >
-          All of the Power BI reports below are best viewed on a desktop
+          The Power BI reports below are best viewed on a desktop
         </p>
         <br />
 
@@ -172,7 +172,7 @@ export default function About() {
           .header2,
           .header3 {
             font-size: 1.3rem;
-            max-width: 80%;
+            max-width: 100%;
           }
         }
 
@@ -183,7 +183,7 @@ export default function About() {
           .header2,
           .header3 {
             font-size: 1.1rem;
-            max-width: 80%;
+            max-width: 100%;
           }
         }
 

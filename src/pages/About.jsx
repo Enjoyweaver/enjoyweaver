@@ -12,7 +12,7 @@ export default function About() {
         >
           Michael Weaver
         </p>
-        <img src="me.png" alt="Logo" className="w-full sm:w-1/2" />
+        <img src="me.png" alt="Logo" className="w-full sm:w-1/3" />
 
         <br />
         <p
@@ -23,7 +23,23 @@ export default function About() {
             marginBottom: "10px",
           }}
         >
-          Web3 Wanderer || Insurance Underwriter || Enterprise Risk Manager
+          Web3 Wanderer{" "}
+          <span
+            style={{
+              color: "var(--nav3)",
+            }}
+          >
+            ||
+          </span>{" "}
+          Insurance Underwriter{" "}
+          <span
+            style={{
+              color: "var(--nav3)",
+            }}
+          >
+            ||
+          </span>{" "}
+          Enterprise Risk Manager
         </p>
       </div>
 
@@ -33,15 +49,13 @@ export default function About() {
             color: "var(--description-color)",
           }}
         >
-          Academically my background is a little varied, though I went to
-          undergrad at the University of South Carolina and received a bachelors
-          in Political Science. Then I quickly got an MBA in Data Analytics from
-          the University of South Carolina as well. I then became a Captive
-          Insurance producer in 2014 and started my expanding into Enterprise
-          Risk Management in 2015. I went on to earn the professional
-          designations of Associate in Risk Management, Certified Risk Manager,
-          Chartered Property Casualty Underwriter, and Certified Insurance
-          Counselor.
+          Sure, here is a rewritten section of code: Academically, my background
+          is a bit diverse. I received a Bachelor&apos;s degree in Political
+          Science from the University of South Carolina (USC) and then quickly
+          got an MBA in Data Analytics from USC as well. While working as a
+          Captive Insurance producer since 2014, I also began transitioning into
+          Enterprise Risk Management in 2015. I earned the professional
+          certifications of ARM, CRM, CPCU, and CIC.
         </p>
         <br />
         <p style={{ color: "var(--description-color)" }}>
