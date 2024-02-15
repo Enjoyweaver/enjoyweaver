@@ -52,6 +52,7 @@ export default function About() {
         <p
           style={{
             color: "var(--description-color)",
+            maxWidth: "800px",
           }}
         >
           Academically, my background is a bit diverse. I received a
