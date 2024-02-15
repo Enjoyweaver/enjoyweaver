@@ -29,7 +29,7 @@ export default function About() {
           </p>
           <br />
           <p
-            className="text-center text1"
+            className="text-center text1 max-w-70"
             style={{ color: "var(--description-color)" }}
           >
             Below is the State of Cryptocurrency Underwriting report, though it
@@ -62,7 +62,7 @@ export default function About() {
           </p>
           <br />
           <p
-            className="text-center text1"
+            className="text-center text1 "
             style={{ color: "var(--description-color)" }}
           >
             This is the start of the Auditor Ranking Dashboard, though we are
@@ -173,7 +173,7 @@ export default function About() {
           .header3 {
             font-size: 1.3rem;
             text-align: center;
-            max-width: 80%;
+            
           }
         }
 
@@ -185,12 +185,12 @@ export default function About() {
           .header3 {
             font-size: 1.1rem;
             text-align: center;
-            max-width: 80%;
+           
           }
           .text1 {
             font-size: 1rem;
             text-align: center;
-            max-width: 80%;
+         
           }
         }
 
@@ -198,6 +198,12 @@ export default function About() {
           iframe {
             width: 100%; /* Full width on mobile */
             height: 300px; /* Fixed height on mobile */
+          }
+
+                    .text1 {
+            font-size: 1rem;
+            text-align: center;
+          
           }
         }
         `}
