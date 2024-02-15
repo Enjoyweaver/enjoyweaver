@@ -195,7 +195,7 @@ export default function About() {
               max-width: 600px;
             }
 
-            @media only screen (max-width: 768px) {
+            @media only screen and (max-width: 600px) {
               iframe {
                 width: 500px; /* Full width on mobile */
                 height: 300px; /* Fixed height on mobile */
