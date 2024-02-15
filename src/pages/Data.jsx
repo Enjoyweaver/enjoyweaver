@@ -3,7 +3,7 @@ export default function About() {
     <div className="pt-20 flex items-center justify-center">
       <div className="text-center" style={{ maxWidth: "900px" }}>
         <p
-          className="text-center"
+          className="text-center header1"
           style={{
             color: "var(--header-color)",
             fontSize: "2rem",
@@ -13,7 +13,7 @@ export default function About() {
           Examples of my data analysis
         </p>
         <p
-          className="text-center"
+          className="text-center header2"
           style={{ color: "var(--description-color)", fontSize: "1.7rem" }}
         >
           All of the Power BI reports below are best viewed on a desktop
@@ -22,7 +22,7 @@ export default function About() {
 
         <div className="text-center justify-center">
           <p
-            className="text-center"
+            className="text-center header3"
             style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
           >
             State of Cryptocurrency Underwriting
@@ -145,13 +145,19 @@ export default function About() {
       </div>
       <style>
         {`
-@media (max-width: 768px) {
-  .text-center,
-  .text-center p,
-  .text-center iframe {
-    font-size: 1.2rem;
-  }
-}
+          @media only screen (max-width: 768px) {
+            .header1 {
+              font-size: 1.5rem;
+            }
+            .header2 {
+              font-size: 1.3rem;
+              max-width: 600px;
+            }
+            .header3 {
+              font-size: 1.1rem;
+              max-width: 600px;
+            }
+          }
 
         `}
       </style>
