@@ -172,11 +172,11 @@ export default function About() {
             }
             .header2 {
               font-size: 1.3rem;
-              max-width: 600px;
+              max-width: 80%;
             }
             .header3 {
               font-size: 1.1rem;
-              max-width: 600px;
+              max-width: 80%;
             }
           }
 
@@ -187,15 +187,15 @@ export default function About() {
 
             .header2 {
               font-size: 1.3rem;
-              max-width: 600px;
+              max-width: 80%;
             }
 
             .header3 {
               font-size: 1.1rem;
-              max-width: 600px;
+              max-width: 80%;
             }
 
-            @media only screen and (max-width: 600px) {
+            @media only screen and (max-width: 500px) {
               iframe {
                 width: 500px; /* Full width on mobile */
                 height: 300px; /* Fixed height on mobile */
