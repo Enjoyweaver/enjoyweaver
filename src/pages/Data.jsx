@@ -157,7 +157,21 @@ export default function About() {
       </div>
       <style>
         {`
-          @media only screen (max-width: 768px) {
+          @media only screen and (max-width: 768px) {
+            .header1 {
+              font-size: 1.5rem;
+            }
+            .header2 {
+              font-size: 1.3rem;
+              max-width: 600px;
+            }
+            .header3 {
+              font-size: 1.1rem;
+              max-width: 600px;
+            }
+          }
+
+                    @media only screen and (max-width: 600px) {
             .header1 {
               font-size: 1.5rem;
             }
