@@ -144,7 +144,7 @@ export default function About() {
             <center>
               <iframe
                 title="Gitcoin"
-                width="5800vw"
+                width="580vw"
                 height="400vh"
                 src="https://app.powerbi.com/view?r=eyJrIjoiZDE2NjU4YjItMzk5NS00MzcyLWJjNzctMTI3ZjUxZDI5MTQ4IiwidCI6ImNkMjEzNjNiLWNmMDMtNDcwMi1iOTliLWUxZDJlNThhZTk2ZiIsImMiOjZ9&embedImagePlaceholder=true&pageName=ReportSection6bcd8f48098809949820"
                 allowFullScreen="true"
