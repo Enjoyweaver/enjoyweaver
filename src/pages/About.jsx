@@ -54,13 +54,13 @@ export default function About() {
             color: "var(--description-color)",
           }}
         >
-          Sure, here is a rewritten section of code: Academically, my background
-          is a bit diverse. I received a Bachelor&apos;s degree in Political
-          Science from the University of South Carolina (USC) and then quickly
-          got an MBA in Data Analytics from USC as well. While working as a
-          Captive Insurance producer since 2014, I also began transitioning into
-          Enterprise Risk Management in 2015. I earned the professional
-          certifications of ARM, CRM, CPCU, and CIC.
+          Academically, my background is a bit diverse. I received a
+          Bachelor&apos;s degree in Political Science from the University of
+          South Carolina (USC) and then quickly got an MBA in Data Analytics
+          from USC as well. While working as a Captive Insurance producer since
+          2014, I also began transitioning into Enterprise Risk Management in
+          2015. I earned the professional certifications of ARM, CRM, CPCU, and
+          CIC.
         </p>
         <br />
         <p style={{ color: "var(--description-color)" }}>
