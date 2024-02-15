@@ -4,13 +4,23 @@ export default function About() {
       <div className="text-center" style={{ maxWidth: "900px" }}>
         <p
           className="text-center"
-          style={{ color: "var(--header-color)", fontSize: "2rem" }}
+          style={{
+            color: "var(--header-color)",
+            fontSize: "2rem",
+            marginBottom: "20px",
+          }}
         >
           Examples of my data analysis
         </p>
+        <p
+          className="text-center"
+          style={{ color: "var(--description-color)", fontSize: "1.7rem" }}
+        >
+          All of the Power BI reports below are best viewed on a desktop
+        </p>
         <br />
-        <br />
-        <div className="text-center justify-center text-sm sm:text-base">
+
+        <div className="text-center justify-center">
           <p
             className="text-center"
             style={{ color: "var(--header-color)", fontSize: "1.5rem" }}
