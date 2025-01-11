@@ -10,7 +10,7 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <a
-              href="https://twitter.com/CryptoPolicyDAO"
+              href="https://CryptoPolicy.center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -23,13 +23,13 @@ const Showcase = () => {
           </div>
         </div>
         <div className="hover-text">
-          <h2>Crypto Policy DAO</h2>
+          <h2>Crypto Policy Center</h2>
         </div>
 
         <div className="section-col">
           <div className="section">
             <a
-              href="https://twitter.com/inDemniFi"
+              href="https://inDemniFi.me"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -42,26 +42,11 @@ const Showcase = () => {
         <div className="hover-text">
           <h2>inDemniFi Crypto</h2>
         </div>
+
         <div className="section-col">
           <div className="section">
             <a
-              href="https://twitter.com/DAOveloped"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="video-container">
-                <img src="DAOveloped.png" alt="" />
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="hover-text">
-          <h2>DAOveloped</h2>
-        </div>
-        <div className="section-col">
-          <div className="section">
-            <a
-              href="https://twitter.com/_Collaborating "
+              href="https://Collaborating.fun"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -74,26 +59,11 @@ const Showcase = () => {
         <div className="hover-text">
           <h2>Collaborating</h2>
         </div>
+
         <div className="section-col">
           <div className="section">
             <a
-              href="https://twitter.com/FantomFluid"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="video-container">
-                <img src="FantomFluid.png" alt="" />
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="hover-text">
-          <h2>Fantom Fluid</h2>
-        </div>
-        <div className="section-col">
-          <div className="section">
-            <a
-              href="https://twitter.com/DAOsignrApparel"
+              href="https://daosignerapparel.com"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -111,7 +81,7 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <a
-              href="https://twitter.com/SafeMemeX"
+              href="https://safememes.fun"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -129,18 +99,18 @@ const Showcase = () => {
         <div className="section-col">
           <div className="section">
             <a
-              href="https://twitter.com/MotivationaLabs"
+              href="https://daostination.fun"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div className="video-container">
-                <img src="motivational.png" alt="" />
+                <img src="daostination1.jpg" alt="" />
               </div>
             </a>
           </div>
         </div>
         <div className="hover-text">
-          <h2>Motivational Labs</h2>
+          <h2>DAOstination</h2>
         </div>
       </div>
     </div>

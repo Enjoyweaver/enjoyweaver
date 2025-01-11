@@ -126,11 +126,6 @@ export default function Resume() {
               across settlement, asset, protocol, and defi stack layers.
             </li>
             <li>
-              Authored “The State of Cryptocurrency Underwriting,” defining
-              technical risks from programming language to compiler, including
-              audit concerns.
-            </li>
-            <li>
               Designed a model for crypto protocol risk rates of return to
               tailor our risk tolerance and portfolio weights for defi protocol
               investments—packaged for licensing as a financial investment
