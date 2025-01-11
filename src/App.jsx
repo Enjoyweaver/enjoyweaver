@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Showcase from "./pages/Showcase";
 import Data from "./pages/Data";
+import SmokeCursor from "./components/SmokeCursor";
+import Resume from "./pages/Resume";
 
 function App() {
   const router = createHashRouter(
@@ -19,11 +21,18 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/data" element={<Data />} />
+        <Route path="/resume" element={<Resume />} />
       </Route>
     )
   );
 
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <>
+      <SmokeCursor />
+
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

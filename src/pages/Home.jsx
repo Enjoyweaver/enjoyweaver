@@ -90,7 +90,7 @@ export default function Home() {
               contribute to society
             </div>
             <div className="right" style={{ color: "var(--content-color)" }}>
-              by inspiring people
+              by inspiring others
             </div>
           </div>
         </div>

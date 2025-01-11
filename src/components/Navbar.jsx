@@ -179,6 +179,15 @@ export default function Navbar() {
               <div className="effect-2"></div>
               <span style={{ color: "var(--nav3)" }}>Data Analysis</span>
             </NavLink>
+            <NavLink
+              className=" NavLink Navtext product"
+              to="/resume"
+              activeClassName="active-link"
+            >
+              <div className="effect-1"></div>
+              <div className="effect-2"></div>
+              <span style={{ color: "var(--nav3)" }}>Resume</span>
+            </NavLink>
           </div>
         </nav>
       </header>
