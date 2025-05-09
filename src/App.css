@@ -1033,7 +1033,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem 0;
+  padding: 0rem 1rem 0;
   min-height: 40vh;
 }
 
@@ -1056,7 +1056,7 @@ p {
 }
 
 .name-title {
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: 800;
   margin: 0;
   padding: 0;
@@ -1095,7 +1095,7 @@ p {
 }
 
 .title-roles {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--description-color);
   display: flex;
