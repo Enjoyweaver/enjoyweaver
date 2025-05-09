@@ -71,8 +71,8 @@ export default function About() {
             even more. Currently, we take eight public data points and then rank
             the auditors based on those, those as more data is entered, and more
             audits are gathered, then the rankings will continually fluctuate,
-            though this report will always be here. Soon enough, we'll open up
-            our github to let others contribute to this project.
+            though this report will always be here. Soon enough, we&pos;ll open
+            up our github to let others contribute to this project.
           </p>
           <br />
           <section>

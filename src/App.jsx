@@ -1,3 +1,4 @@
+// src/App.jsx
 import "./App.css";
 import Home from "./pages/Home";
 import {
@@ -13,6 +14,11 @@ import Data from "./pages/Data";
 import Resume from "./pages/Resume";
 
 function App() {
+  // Set dark mode as default theme
+  if (!document.documentElement.getAttribute("data-theme")) {
+    document.documentElement.setAttribute("data-theme", "dark-mode");
+  }
+
   const router = createHashRouter(
     createRoutesFromElements(
       <Route path="/" element={<Navbar />}>
@@ -25,11 +31,7 @@ function App() {
     )
   );
 
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -803,3 +803,370 @@ p {
     padding: 1rem;
   }
 }
+
+/* Dark Mode theme (default) */
+[data-theme="dark-mode"] {
+  --nav1: #6366f1; /* Indigo */
+  --nav2: #8b5cf6; /* Violet */
+  --nav3: #a78bfa; /* Purple */
+  --bac1: #111827; /* Dark Gray - almost black */
+  --bac2: #1f2937; /* Dark Gray */
+  --bac3: #374151; /* Medium Gray */
+  --bac4: #4b5563; /* Light Gray */
+  --bac5: #6b7280; /* Lighter Gray */
+  --header-color: #f9fafb; /* Almost white */
+  --description-color: #e5e7eb; /* Very light gray */
+  --content-color: #93c5fd; /* Light blue */
+  --hover-description-background: #111827; /* Very dark gray */
+  --effect-1: rgba(99, 102, 241, 0.6); /* Indigo with transparency */
+  --effect-2: rgba(139, 92, 246, 0.6); /* Violet with transparency */
+  --button-text: #e5e7eb; /* Light gray */
+  --hover-text: #f9fafb; /* Almost white */
+  --hover-subtext: #d1d5db; /* Light gray */
+  --button-background: #374151; /* Medium Gray */
+  background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac1), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Original theme renamed to 'original' */
+[data-theme="original"] {
+  --nav1: #145b91;
+  --nav2: #154a72;
+  --nav3: #164468;
+  --bac1: #1a759f;
+  --bac2: #1e6091;
+  --bac3: #82c0d3;
+  --bac4: #34a0a4;
+  --bac5: #52b69a;
+  --header-color: #9ad0c2;
+  --description-color: #90c7b7;
+  --content-color: #95d8c7;
+  --hover-description-background: #092f41;
+  --effect-1: #77d5f7;
+  --effect-2: #52f7c8;
+  --button-text: #90e7f8;
+  --hover-text: #d8fafa;
+  --hover-subtext: #f9faf5;
+  background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac1), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Keep all other themes as they were */
+[data-theme="morning"] {
+  /* Morning-themed colors */
+  --nav1: #f0e68c; /* Light khaki */
+  --nav2: #fafad2; /* Light goldenrod yellow */
+  --nav3: #117fa3; /* Light blue */
+  --bac1: #ffe4c4; /* Bisque */
+  --bac2: #d3d3d3; /* Light gray */
+  --bac3: #076381; /* Dark cyan */
+  --bac4: #9ad0c2; /* Light turquoise */
+  --bac5: #57cc99; /* Medium aquamarine */
+  --header-color: #076381; /* Dark cyan */
+  --description-color: #40aa8e; /* Light turquoise */
+  --content-color: #fafad2; /* Light goldenrod yellow */
+  --hover-description-background: #57cc99; /* Medium aquamarine */
+  --effect-1: #add8e6; /* Light blue */
+  --effect-2: #ffe4c4; /* Bisque */
+  /* Background with gradients in different directions */
+  background-image: radial-gradient(circle at 10% 20%, var(--bac1), transparent),
+    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
+    linear-gradient(to bottom right, var(--bac3), transparent),
+    linear-gradient(to top left, var(--bac4), transparent),
+    linear-gradient(to bottom, var(--bac5), transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  --button-text: #0b8199;
+  --hover-text: #d8fafa; /* Light cyan */
+  --hover-subtext: #f9faf5; /* Beige */
+}
+
+/* Keep all other existing themes as they were... */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #d1d1d1;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+nav {
+  border-bottom: 1px solid var(--header-color);
+}
+
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0;
+}
+
+/* Keep all the existing CSS for pillar animation exactly as is */
+.pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem; /* Reduced from 6rem to fit with new header */
+  transform: translateX(0px);
+  perspective: 900px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.wrap {
+  display: flex;
+  transform: rotateY(0deg);
+  transition: all 1s cubic-bezier(0, 0, 0, 1);
+  transform-style: preserve-3d;
+}
+
+.row {
+  width: 900px;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: all 3s cubic-bezier(0, 0, 0, 0);
+}
+
+.row:hover .wrap {
+  transform: rotateY(-90deg);
+  cursor: pointer;
+}
+
+.row:hover {
+  z-index: 1;
+}
+
+.row:hover .left:before {
+  width: 100%;
+}
+
+.left {
+  width: 500px;
+  text-align: right;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+.left:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.right {
+  width: 500px;
+  text-align: left;
+  transform: rotateY(90deg);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.row:hover .right:after {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .pillar {
+    margin-top: 2rem;
+  }
+
+  .row {
+    width: 110%;
+    font-size: 0.75em;
+  }
+  .wrap {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* New styles for Home page */
+.home-page {
+  min-height: 100vh;
+  padding-top: 5rem;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 0;
+  min-height: 40vh;
+}
+
+.name-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.name-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+  color: var(--header-color);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    to right,
+    var(--header-color),
+    var(--nav1),
+    var(--nav2),
+    var(--nav3)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textGradient 5s ease-in-out infinite alternate;
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
+.title-separator {
+  width: 120px;
+  height: 4px;
+  margin: 1.5rem auto;
+  background: linear-gradient(90deg, var(--nav1), var(--nav3));
+  border-radius: 2px;
+}
+
+.title-roles {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--description-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.role-divider {
+  color: var(--nav2);
+}
+
+/* Background decorative elements */
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.15;
+  border-radius: 50%;
+}
+
+.shape-1 {
+  width: 30vw;
+  height: 30vw;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, var(--nav1), transparent 70%);
+}
+
+.shape-2 {
+  width: 25vw;
+  height: 25vw;
+  bottom: -10%;
+  right: -5%;
+  background: radial-gradient(circle, var(--nav2), transparent 70%);
+}
+
+.shape-3 {
+  width: 20vw;
+  height: 20vw;
+  top: 30%;
+  right: 20%;
+  background: radial-gradient(circle, var(--nav3), transparent 70%);
+}
+
+@media (max-width: 768px) {
+  .name-title {
+    font-size: 2.75rem;
+  }
+
+  .title-roles {
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .role-divider {
+    display: none;
+  }
+
+  .title-separator {
+    width: 80px;
+    margin: 1rem auto;
+  }
+}
