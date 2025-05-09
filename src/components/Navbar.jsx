@@ -213,8 +213,8 @@ export default function Navbar() {
             <NavLink className="NavLink Navtext product" to="/data">
               <span style={{ color: "var(--nav3)" }}>Data Analysis</span>
             </NavLink>
-            <NavLink className="NavLink Navtext product" to="/resume">
-              <span style={{ color: "var(--nav3)" }}>Resume</span>
+            <NavLink className="NavLink Navtext product" to="/articles">
+              <span style={{ color: "var(--nav3)" }}>Articles</span>
             </NavLink>
           </div>
         </nav>
