@@ -1,3 +1,5 @@
+// src/pages/Home.jsx
+
 import "../App.css";
 
 export default function Home() {

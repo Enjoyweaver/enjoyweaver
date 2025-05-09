@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Showcase from "./pages/Showcase";
 import Data from "./pages/Data";
-import SmokeCursor from "./components/SmokeCursor";
 import Resume from "./pages/Resume";
 
 function App() {
@@ -28,8 +27,6 @@ function App() {
 
   return (
     <>
-      <SmokeCursor />
-
       <RouterProvider router={router} />
     </>
   );

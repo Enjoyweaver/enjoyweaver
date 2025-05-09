@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function Navbar() {
   const [showThemes, setShowThemes] = useState(false);
@@ -194,6 +195,7 @@ export default function Navbar() {
       <main>
         <Outlet />
       </main>
+      <Footer />
       <style>
         {`
         
