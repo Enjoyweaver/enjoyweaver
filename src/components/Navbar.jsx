@@ -5,7 +5,8 @@ import Footer from "./Footer";
 
 export default function Navbar() {
   const [showThemes, setShowThemes] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true); // Dark mode is default
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Set dark mode as default on component mount
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function Navbar() {
 
   const toggleThemes = () => {
     setShowThemes(!showThemes);
+    setIsMobileMenuOpen(false); // Close mobile menu when opening themes
   };
 
   const toggleDarkMode = () => {
@@ -31,6 +33,11 @@ export default function Navbar() {
     }
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setShowThemes(false); // Close theme menu when opening mobile menu
+  };
+
   const selectTheme = (selectedTheme) => {
     document.documentElement.setAttribute("data-theme", selectedTheme);
     setShowThemes(false);
@@ -41,8 +48,19 @@ export default function Navbar() {
     const toggleButtonElement = document.querySelector(
       ".theme-toggle-container"
     );
-    if (toggleButtonElement && !toggleButtonElement.contains(event.target)) {
+    const mobileMenuElement = document.querySelector(".mobile-menu");
+    const hamburgerElement = document.querySelector(".hamburger-menu");
+
+    if (
+      toggleButtonElement &&
+      !toggleButtonElement.contains(event.target) &&
+      mobileMenuElement &&
+      !mobileMenuElement.contains(event.target) &&
+      hamburgerElement &&
+      !hamburgerElement.contains(event.target)
+    ) {
       setShowThemes(false);
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -51,274 +69,380 @@ export default function Navbar() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  const themes = [
+    { id: "dark-mode", name: "Dark Mode", color: "#6366f1" },
+    { id: "original", name: "Original", color: "#067288" },
+    { id: "morning", name: "Morning", color: "#076381" },
+    { id: "lemonade", name: "Lemonade", color: "#0c6d2c" },
+    { id: "mountain-dew", name: "Mountain Dew", color: "#336633" },
+    { id: "breezy", name: "Breezy", color: "#317988" },
+    { id: "summer", name: "Summer", color: "#70a1ff" },
+    { id: "ocean-city", name: "Ocean City", color: "#90D1F9" },
+    { id: "coffee", name: "Coffee", color: "#7a5f56" },
+    { id: "halloween", name: "Halloween", color: "#FFB166" },
+    { id: "moonlit", name: "Moonlit", color: "#99FFFF" },
+    { id: "street-light", name: "Street Light", color: "#def5b9" },
+    { id: "neon-night", name: "Neon Night", color: "#00FF00" },
+    { id: "cyberpunk", name: "Cyberpunk", color: "#00FF00" },
+  ];
+
+  const navLinks = [
+    { path: "/", label: "Home", color: "var(--nav1)" },
+    { path: "/About", label: "About", color: "var(--nav2)" },
+    { path: "/Showcase", label: "Showcase", color: "var(--nav3)" },
+    { path: "/data", label: "Data Analysis", color: "var(--nav3)" },
+    { path: "/articles", label: "Articles", color: "var(--nav3)" },
+  ];
+
   return (
     <div>
-      <header className="w-full text-white p-4 fixed top-0 z-10">
-        <nav className="container mx-auto flex justify-between items-center">
-          <div className="nav-left flex items-center">
+      <header className="navbar-header">
+        <nav className="navbar-container">
+          {/* Left side controls */}
+          <div className="nav-left">
             {/* Dark Mode Toggle */}
             <button
-              className="dark-mode-toggle mr-4"
+              className="dark-mode-toggle"
               onClick={toggleDarkMode}
               aria-label={
                 isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
               }
             >
               {isDarkMode ? (
-                <i
-                  className="fa-solid fa-sun"
-                  style={{ color: "var(--header-color)" }}
-                ></i>
+                <i className="fa-solid fa-sun"></i>
               ) : (
-                <i
-                  className="fa-solid fa-moon"
-                  style={{ color: "var(--header-color)" }}
-                ></i>
+                <i className="fa-solid fa-moon"></i>
               )}
             </button>
 
             {/* Theme Selector */}
-            <div className="theme-toggle-container relative">
+            <div className="theme-toggle-container">
               <button
-                className="px-3 py-1 mr-4 rounded-md theme-toggle-button"
+                className="theme-toggle-button"
                 onClick={toggleThemes}
                 style={{
                   color: "var(--button-text)",
                   backgroundColor: "var(--button-background)",
                 }}
               >
-                Select Theme
+                Themes
               </button>
               {showThemes && (
-                <div className="absolute top-10 right-0 bg-white border border-gray-300 rounded-md shadow-lg theme-dropdown-options">
-                  <button
-                    className="block w-full py-2 text-left px-4 dark-mode-button-hover"
-                    style={{ color: "#6366f1" }}
-                    onClick={() => selectTheme("dark-mode")}
-                  >
-                    Dark Mode
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 original-button-hover"
-                    style={{ color: "#067288" }}
-                    onClick={() => selectTheme("original")}
-                  >
-                    Original
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 morning-button-hover"
-                    style={{ color: "#076381" }}
-                    onClick={() => selectTheme("morning")}
-                  >
-                    Morning
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 lemonade-button-hover"
-                    style={{ color: "#0c6d2c" }}
-                    onClick={() => selectTheme("lemonade")}
-                  >
-                    Lemonade
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 mountain-dew-button-hover"
-                    style={{ color: "#336633" }}
-                    onClick={() => selectTheme("mountain-dew")}
-                  >
-                    Mountain Dew
-                  </button>
-
-                  <button
-                    className="block w-full py-2 text-left px-4 breezy-button-hover"
-                    style={{ color: "#317988" }}
-                    onClick={() => selectTheme("breezy")}
-                  >
-                    Breezy
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 summer-button-hover"
-                    style={{
-                      color: "#70a1ff",
-                    }}
-                    onClick={() => selectTheme("summer")}
-                  >
-                    Summer
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 ocean-city-button-hover"
-                    style={{ color: "#90D1F9" }}
-                    onClick={() => selectTheme("ocean-city")}
-                  >
-                    Ocean City
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 coffee-button-hover"
-                    style={{
-                      color: "#7a5f56",
-                    }}
-                    onClick={() => selectTheme("coffee")}
-                  >
-                    Coffee
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 halloween-button-hover"
-                    style={{ color: "#FFB166" }}
-                    onClick={() => selectTheme("halloween")}
-                  >
-                    Halloween
-                  </button>
-
-                  <button
-                    className="block w-full py-2 text-left px-4 moonlit-button-hover"
-                    style={{ color: "#99FFFF" }}
-                    onClick={() => selectTheme("moonlit")}
-                  >
-                    Moonlit
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 street-light-button-hover"
-                    style={{ color: "#def5b9" }}
-                    onClick={() => selectTheme("street-light")}
-                  >
-                    Street Light
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 neon-night-button-hover"
-                    style={{ color: "#00FF00" }}
-                    onClick={() => selectTheme("neon-night")}
-                  >
-                    Neon Night
-                  </button>
-                  <button
-                    className="block w-full py-2 text-left px-4 cyberpunk-button-hover"
-                    style={{ color: "#00FF00" }}
-                    onClick={() => selectTheme("cyberpunk")}
-                  >
-                    Cyberpunk
-                  </button>
+                <div className="theme-dropdown-menu">
+                  {themes.map((theme) => (
+                    <button
+                      key={theme.id}
+                      className="theme-option"
+                      style={{ color: theme.color }}
+                      onClick={() => selectTheme(theme.id)}
+                    >
+                      {theme.name}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
           </div>
 
-          <div className="nav-links">
-            <NavLink className="NavLink Navtext product" to="/">
-              <span style={{ color: "var(--nav1)" }}>Home</span>
-            </NavLink>
-            <NavLink className="NavLink Navtext product" to="/About">
-              <span style={{ color: "var(--nav2)" }}>About</span>
-            </NavLink>
-            <NavLink className="NavLink Navtext product" to="/Showcase">
-              <span style={{ color: "var(--nav3)" }}>Showcase</span>
-            </NavLink>
-            <NavLink className="NavLink Navtext product" to="/data">
-              <span style={{ color: "var(--nav3)" }}>Data Analysis</span>
-            </NavLink>
-            <NavLink className="NavLink Navtext product" to="/articles">
-              <span style={{ color: "var(--nav3)" }}>Articles</span>
-            </NavLink>
+          {/* Desktop Navigation */}
+          <div className="nav-links desktop-nav">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                className="nav-link"
+                to={link.path}
+                style={({ isActive }) => ({
+                  color: isActive ? "var(--header-color)" : link.color,
+                })}
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </div>
+
+          {/* Mobile Hamburger Menu */}
+          <button
+            className="hamburger-menu"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <span
+              className={`hamburger-line ${isMobileMenuOpen ? "open" : ""}`}
+            ></span>
+            <span
+              className={`hamburger-line ${isMobileMenuOpen ? "open" : ""}`}
+            ></span>
+            <span
+              className={`hamburger-line ${isMobileMenuOpen ? "open" : ""}`}
+            ></span>
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              className="mobile-nav-link"
+              to={link.path}
+              style={({ isActive }) => ({
+                color: isActive ? "var(--header-color)" : link.color,
+              })}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
       </header>
+
       <main>
         <Outlet />
       </main>
       <Footer />
+
       <style>
         {`
+        .navbar-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background: rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-bottom: 1px solid var(--header-color);
+        }
+        
+        .navbar-container {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 1rem 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .nav-left {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+        
         .dark-mode-toggle {
-          padding: 8px;
-          font-size: 1.2rem;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: transparent;
+          border: 2px solid var(--header-color);
+          color: var(--header-color);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          font-size: 1.1rem;
+        }
+        
+        .dark-mode-toggle:hover {
+          transform: rotate(15deg) scale(1.1);
+          background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .theme-toggle-container {
+          position: relative;
+        }
+        
+        .theme-toggle-button {
+          padding: 0.5rem 1.5rem;
+          border-radius: 25px;
+          border: 2px solid var(--header-color);
+          background: transparent;
+          cursor: pointer;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          font-size: 0.9rem;
+        }
+        
+        .theme-toggle-button:hover {
+          background: rgba(255, 255, 255, 0.05);
+          transform: translateY(-2px);
+        }
+        
+        .theme-dropdown-menu {
+          position: absolute;
+          top: calc(100% + 0.5rem);
+          left: 0;
+          background: rgba(0, 0, 0, 0.9);
+          border: 1px solid var(--header-color);
+          border-radius: 8px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          max-height: 400px;
+          overflow-y: auto;
+          min-width: 150px;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .theme-option {
+          display: block;
+          width: 100%;
+          padding: 0.75rem 1rem;
           background: transparent;
           border: none;
           cursor: pointer;
-          transition: transform 0.3s ease;
+          text-align: left;
+          transition: all 0.2s ease;
+          font-size: 0.9rem;
+        }
+        
+        .theme-option:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateX(5px);
+        }
+        
+        .desktop-nav {
           display: flex;
+          gap: 2rem;
+        }
+        
+        .nav-link {
+          position: relative;
+          text-decoration: none;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          padding: 0.5rem 0;
+          font-size: 0.95rem;
+        }
+        
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--effect-1);
+          transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+          width: 100%;
+        }
+        
+        .hamburger-menu {
+          display: none;
+          flex-direction: column;
+          gap: 4px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0.5rem;
+          position: relative;
+          width: 40px;
+          height: 40px;
           align-items: center;
           justify-content: center;
         }
         
-        .dark-mode-toggle:hover {
-          transform: rotate(15deg) scale(1.2);
-        }
-        
-        .theme-toggle-button {
-          border: 1px solid var(--header-color);
+        .hamburger-line {
+          width: 25px;
+          height: 2px;
+          background: var(--header-color);
           transition: all 0.3s ease;
+          transform-origin: center;
         }
         
-        .theme-toggle-button:hover {
-          background-color: var(--hover-description-background);
+        .hamburger-line.open:nth-child(1) {
+          transform: rotate(45deg) translateY(8px);
         }
         
-        .product {
-          position: relative;
-          padding: 0.5rem 1rem;
-          margin-right: 0.5rem;
+        .hamburger-line.open:nth-child(2) {
+          opacity: 0;
+        }
+        
+        .hamburger-line.open:nth-child(3) {
+          transform: rotate(-45deg) translateY(-8px);
+        }
+        
+        .mobile-menu {
+          position: fixed;
+          top: calc(100% - 1px);
+          left: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.95);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          transform: translateY(-100vh);
+          opacity: 0;
+          transition: all 0.3s ease;
+          border-top: 1px solid var(--header-color);
+          max-height: calc(100vh - 80px);
+          overflow-y: auto;
+        }
+        
+        .mobile-menu.open {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        
+        .mobile-nav-link {
+          display: block;
+          padding: 1.25rem 2rem;
           text-decoration: none;
-          transition: all 0.3s ease;
-          border-radius: 4px;
           font-weight: 500;
-        }
-
-        .product:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .product.active {
-          background-color: rgba(255, 255, 255, 0.15);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+          font-size: 1.1rem;
         }
         
-        .product span {
-          transition: color 0.3s ease;
+        .mobile-nav-link:hover {
+          background: rgba(255, 255, 255, 0.05);
+          transform: translateX(10px);
         }
         
-        .product:hover span {
-          color: var(--header-color) !important;
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+          .navbar-container {
+            padding: 1rem;
+          }
+          
+          .desktop-nav {
+            display: none;
+          }
+          
+          .hamburger-menu {
+            display: flex;
+          }
+          
+          .theme-toggle-button {
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+          }
+          
+          .dark-mode-toggle {
+            width: 36px;
+            height: 36px;
+            font-size: 1rem;
+          }
+          
+          .theme-dropdown-menu {
+            right: 0;
+            left: auto;
+          }
         }
         
-        .dark-mode-button-hover:hover {
-            background-color: #1F1B24;
-            color: #e9ddff;
-        }
-        
-        .original-button-hover:hover {
-            background-color: #82c0d3;
-        }
-        
-        .morning-button-hover:hover {
-            background: linear-gradient(260deg, #f0f5ff, #afc9ff, #e0ecff);
-            color: #067288;
-        }
-        
-        /* Other theme button hover styles */
-        
-        .theme-dropdown-options {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        
-        @media only screen and (max-width: 768px) {
-            .Navtext {
-                margin-right: 0.25rem;
-                font-size: 0.8rem;
-                padding: 0.25rem 0.5rem;
-            }
-            
-            .dark-mode-toggle {
-                font-size: 1rem;
-                padding: 6px;
-            }
-            
-            .theme-toggle-button {
-                font-size: 0.8rem;
-                padding: 0.5rem;
-            }
-            
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-end;
-            }
+        /* Tablet Styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .nav-link {
+            font-size: 0.9rem;
+          }
+          
+          .desktop-nav {
+            gap: 1.5rem;
+          }
         }
         `}
       </style>

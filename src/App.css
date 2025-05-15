@@ -802,31 +802,48 @@ p {
 
 /* Dark Mode theme (default) */
 [data-theme="dark-mode"] {
-  --nav1: #6366f1; /* Indigo */
-  --nav2: #8b5cf6; /* Violet */
-  --nav3: #a78bfa; /* Purple */
-  --bac1: #111827; /* Dark Gray - almost black */
-  --bac2: #1f2937; /* Dark Gray */
-  --bac3: #374151; /* Medium Gray */
-  --bac4: #4b5563; /* Light Gray */
-  --bac5: #6b7280; /* Lighter Gray */
-  --header-color: #f9fafb; /* Almost white */
-  --description-color: #e5e7eb; /* Very light gray */
-  --content-color: #93c5fd; /* Light blue */
-  --hover-description-background: #111827; /* Very dark gray */
-  --effect-1: rgba(99, 102, 241, 0.6); /* Indigo with transparency */
-  --effect-2: rgba(139, 92, 246, 0.6); /* Violet with transparency */
+  --nav1: #60a5fa; /* Sky Blue */
+  --nav2: #818cf8; /* Light Indigo */
+  --nav3: #c084fc; /* Light Purple */
+  --bac1: #0f0f17; /* Very Dark Navy */
+  --bac2: #141422; /* Dark Navy */
+  --bac3: #1b1b2e; /* Navy */
+  --bac4: #242438; /* Dark Purple */
+  --bac5: #2d2d44; /* Purple Navy */
+  --header-color: #f3f4f6; /* Cool White */
+  --description-color: #d1d5db; /* Light Gray */
+  --content-color: #94a3b8; /* Blue Gray */
+  --hover-description-background: rgba(
+    30,
+    41,
+    59,
+    0.5
+  ); /* Slate with transparency */
+  --effect-1: rgba(59, 130, 246, 0.5); /* Blue glass effect */
+  --effect-2: rgba(139, 92, 246, 0.4); /* Purple glass effect */
   --button-text: #e5e7eb; /* Light gray */
   --hover-text: #f9fafb; /* Almost white */
   --hover-subtext: #d1d5db; /* Light gray */
-  --button-background: #374151; /* Medium Gray */
-  background-image: radial-gradient(circle at 10% 20%, var(--bac4), transparent),
-    radial-gradient(circle at 80% 70%, var(--bac2), transparent),
-    linear-gradient(to bottom right, var(--bac3), transparent),
-    linear-gradient(to top left, var(--bac1), transparent),
-    linear-gradient(to bottom, var(--bac5), transparent);
+  --button-background: rgba(71, 85, 105, 0.2); /* Transparent slate */
+  background-image: radial-gradient(
+      circle at 15% 30%,
+      rgba(59, 130, 246, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(139, 92, 246, 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(96, 165, 250, 0.08),
+      transparent 70%
+    ),
+    linear-gradient(180deg, var(--bac1) 0%, var(--bac2) 50%, var(--bac3) 100%);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Original theme renamed to 'original' */

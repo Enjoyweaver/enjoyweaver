@@ -1,2 +1,21 @@
+File Structure
 
-
+-/public
+-/src
+--/assets
+--/components
+---Footer.jsx
+---Navbar.jsx
+--/data
+---articles.js
+--/pages
+---About.jsx
+---Articles.jsx
+---Data.jsx
+---Home.jsx
+---Resume.jsx
+---Showcase.jsx
+--App.css
+--App.jsx
+--main.jsx
+-index.html

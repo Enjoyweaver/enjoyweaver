@@ -1,241 +1,528 @@
 // src/pages/Articles.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  allArticles,
+  getAllCategories,
+  getFeaturedArticles,
+} from "../data/articles";
+import ArticleManager from "../components/ArticleManager";
 
 export default function Articles() {
-  const [expandedArticle, setExpandedArticle] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [filteredArticles, setFilteredArticles] = useState(allArticles);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [isArticleOpen, setIsArticleOpen] = useState(false);
+  const [showManager, setShowManager] = useState(false);
+  const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
 
-  const articles = [
-    {
-      id: 1,
-      title: "AI is so far from replacing your job it's hilarious",
-      date: "April 2025",
-      preview:
-        "AI is still in its infancy as far as being a tool is concerned, let alone stealing your job.",
-      content: `AI is so far from replacing your job its hilarious. AI is still in its infancy as far as being a tool is concerned, let alone stealing your job.`,
-    },
-    {
-      id: 2,
-      title: "AI is a tool, not the solution",
-      date: "March 2025",
-      preview:
-        "AI is not the solution, it is the tool to help YOU get to the solution faster.",
-      content: `AI is not the solution, it is the tool to help YOU get to the solution faster.
+  // Set your admin password here
+  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_Intro;
 
-AI is going to expediate the human revolution, not create its own.
+  const categories = ["All", ...getAllCategories()];
+  const featuredArticles = getFeaturedArticles();
 
-Way back in time, as we understood metal better, our swords got stronger and our hammers stopped breaking. AI is no different, its a tool and if you have someone on your team who understands how to build and strategize using AI, then your company will advance and can strategically outpace those who dont.
-
-In 1965, Moore's Law stated that computer chip capacity would double approximately every two years, leading to exponential growth in computing power. According to a 2023 study from Stanford University's Human-Centered AI Institute, AI models' capabilities are doubling in performance metrics every 6-9 months on key reasoning and language tasks, far outpacing the historical growth rate of traditional computing power.
-
-The companies treating AI as their solution rather than their tool are already falling behind—and they don't even know it.
-
-Copying your content and pasting it into AI and copying the results and pasting it in to your email/newsletter/Teams or Slack message is not how you utilize AI. If you are doing that then you are treating AI as the solution and not as a tool. AI needs to help you get to the solution faster, not create the solution.
-
-One of the benefits of AI is that it can be used in an unbiased manner if you understand that AI is not meant to be your source of reason and decision-making. I've seen too many managers and Chiefs copy the results directly from AI and paste it believing that was a solution, when in fact its not the solution at all - its intellectual fraud because you just defrauded yourself and your company. And not to mention you just got lazier, decreased your expectations, and certainly didnt proof-read because you left the "and what else can I do for you?" at the bottom of the email/newsletter/Teams or Slack message.
-
-While everyone debates AI replacing humans, the quiet revolution is happening in forward-thinking companies who are not too afraid to strategize, to innovate, and to utilize their employees talent to build, scale, and create value.
-
-AI needs to be used as a tool to index, to combine, to resource, to be a 24/7 unbiased-employee that can be multiplied in an instant and used concurrently to manage many many many tasks at once, but never as the source of your solution.
-
-If you've got someone on your team who can build AI-driven processes to help your company increase efficiency then good for you. But, if you've got someone on your team who can build full-stack autonomous processes equivalent to an organization and that can scale with every customer, then lucky you because they can take your company to the next realm.`,
-    },
-    {
-      id: 3,
-      title: "My Calendy: Marketing at the Wrong Time",
-      date: "February 2025",
-      preview:
-        "Sunday night, 11:32 PM: Staring at a blank social media editor while launching My Calendy...",
-      content: `Sunday night, 11:32 PM: Staring at a blank social media editor while launching My Calendy, I realized the irony... I built a productivity tool based on cognitive science that helps people work at their optimal times, yet here I was, creating marketing content when my brain was least equipped for creative work! 🤦‍♂️ My first post on My Calendy feels like it was written by someone desperately trying to fit "all the science and passion" into one post. Sorry for the wall of text! This is what happens when you try to do marketing after hours.
-
-This experience made me realize: If I struggle with this as someone devoted to productivity optimization, others must too. So I'm excited to announce an upcoming feature for My Calendy: AI-powered marketing campaign creation. We're building a tool that will:
-- Create platform-specific campaigns from your uploaded content
-- Schedule posts during optimal engagement windows
-- Dynamically adjust future content based on post performance
-- Build a narrative across multiple posts that tells your story effectively
-
-The best part? This marketing feature will deliver the output of an entire marketing department at a fraction of the cost. What will make it truly powerful will be the adaptive learning. The system track will real engagement metrics from each post, then refine future content strategy based on what's actually working - continuously improving your results without requiring constant supervision.
-
-In the meantime, check out My Calendy and see how matching your tasks to your cognitive peaks can transform your productivity: https://MyCalendy.fun
-
-Who else struggles with creating social media content when you should be focusing on other priorities?
-#WorkSmarter #ScheduleSmarter #ProductivityHack #CognitiveScience`,
-    },
-    {
-      id: 4,
-      title: "Launch of My Calendy",
-      date: "January 2025",
-      preview:
-        "We're excited to announce the launch of My Calendy – a productivity tool that combines cognitive science with advanced project management.",
-      content: `We're excited to announce the launch of My Calendy – a productivity tool that combines cognitive science with advanced project management. Most scheduling tools only tell you WHEN to work. My Calendy tells you WHAT to work on WHEN, based on your brain's natural cognitive patterns.
-
-For example, did you know most people have peak analytical ability in the morning, while creative work often flows better in the afternoon? My Calendy analyzes your unique cognitive timeline, current schedule, and project requirements to create the perfect task alignment, helping you:
-• Reduce decision fatigue
-• Match tasks to your cognitive strengths
-• Maximize productivity during peak hours
-• Create a more balanced workflow
-
-We've just launched our 7-day free trial at https://MyCalendy.fun
-
-We'd love to hear your thoughts on how cognitive science can improve your productivity!
-#ScheduleSmarter #ProductivityHack #WorkSmarter #CognitiveProductivity`,
-    },
-    {
-      id: 5,
-      title: "Cognitive Science and Productivity",
-      date: "December 2024",
-      preview:
-        "Did you know that performing tasks at the wrong time of day can reduce your performance by up to 26%?",
-      content: `Did you know that performing tasks at the wrong time of day can reduce your performance by up to 26%? Research shows that when tasks are not aligned with your chronotype (whether you're a morning lark or night owl), your basic cognitive abilities - from working memory to analytical processing - suffer significantly.
-
-No matter how hard I worked in a day or how much I got done, I often felt like I could have accomplished more. Some days, despite making what seemed like progress, I barely felt like I'd taken a step forward. This frustration led me down a path of researching scheduling methods and productivity optimization.
-
-What I discovered was fascinating: our cognitive abilities fluctuate dramatically throughout the day, and these patterns are largely predictable based on our chronotype. Morning people excel at analytical tasks early in the day, while night owls might perform complex creative work better in the evening.
-
-The science was compelling, but more importantly, it was actionable. So, I started building https://MyCalendy.fun as a personal side project. What began as a tool to help me take back control of my schedule has grown into something I'm excited to share with you.
-
-I realized I wasn't capturing my full mental potential by simply scheduling tasks in the next available slot, when it felt convenient, or when others chose my appointments for me. My Calendy works with you to understand your cognitive fluctuations and your schedule, then aligns your tasks accordingly.
-
-Need analytical thinking? My Calendy schedules that for when your brain is sharpest. Creative writing? It plans that for when your imagination peaks. It's like having a personal productivity coach guiding you toward optimal performance hour by hour.
-
-The results can be transformative. By matching your cognitive strengths to appropriate tasks throughout the day, you can reclaim hours of productive time each week. Whether you're a morning lark or a night owl, My Calendy ensures you're working at your cognitive best.
-
-I built this tool because I wanted to work smarter, not harder. Now I'm inviting you to experience the difference that cognitive-based scheduling can make in your productivity and wellbeing.
-#Productivity #CognitiveScience #TimeManagement #WorkSmarter #ProjectManagement`,
-    },
-    {
-      id: 6,
-      title: "Crypto Wallet Regulation",
-      date: "November 2024",
-      preview:
-        "There is no bank in crypto, so its great to read regulators are starting to understand the importance...",
-      content: `There is no bank in crypto, so its great to read regulators are starting to understand the importance and implication of establishing regulation for #crypto wallets, but regulation should start with the construction of the wallet and not just the end result.
-
-You can read how the Crypto Policy Center approaches wallet regulation in the article below, though more research and concepts will be continually added.
-
-From cryptography standards, to customer service, to insurance - all aspects of creating, owning, accessing, and securing a crypto wallet need to be considered. The goal of crypto wallet regulation should be to protect us consumers, identify and penalize the bad actors, all while supporting and encouraging #blockchain innovation.
-
-https://cryptopolicy.center/wallet-regulation`,
-    },
-    {
-      id: 7,
-      title: "Principle-based Web3 Regulation",
-      date: "October 2024",
-      preview:
-        "Here is an article discussing how the CryptoPolicy.center approaches principle-based web3-friendly regulation...",
-      content: `Here is an article discussing how the CryptoPolicy.center approaches principle-based web3-friendly regulation, though more will be added to it as we continue to research - https://cryptopolicy.center/principled-approach`,
-    },
-    {
-      id: 8,
-      title: "Auditor Liability in Crypto",
-      date: "September 2024",
-      preview:
-        "Here is a short article from CryptoPolicy.center on defining and establishing Auditor Liability within #crypto...",
-      content: `Here is a short article from CryptoPolicy.center on defining and establishing Auditor Liability within #crypto, which is something that is greatly needed in #Web3, and especially for Web3 to grow and reach its full potential. More info and data will be added soon, but the article can be read at https://cryptopolicy.center/auditor-liability`,
-    },
-    {
-      id: 9,
-      title: "Web3-Friendly Wallet Regulation",
-      date: "August 2024",
-      preview:
-        "Here is an intro blog from CryptoPolicy.Center on an approach to establishing web3-friendly regulation for crypto wallets...",
-      content: `Here is an intro blog from CryptoPolicy.Center on an approach to establishing web3-friendly regulation for crypto wallets. There will be more research going into the different approaches needed for hot and cold wallets though, so more to come. https://cryptopolicy.center/wallet-regulation`,
-    },
-    {
-      id: 10,
-      title: "Principled Approach to Crypto Regulation",
-      date: "July 2024",
-      preview:
-        "Crypto regulation needs a principled-based approach to ensure that bad actors are held reliable...",
-      content: `Crypto regulation needs a principled-based approach to ensure that bad actors are held reliable while protecting consumers and supporting builders. A clear and concise foundation has been started and can be reviewed at CryptoPolicy.Center.`,
-    },
-    {
-      id: 11,
-      title: "State of Cryptocurrency Underwriting",
-      date: "June 2024",
-      preview:
-        "Just posted the State of Cryptocurrency Underwriting to inDemniFi.me if you want to check out what's risky in crypto...",
-      content: `Just posted the State of Cryptocurrency Underwriting to https://inDemniFi.me if you want to check out what's risky in crypto. I've got a lot of data to add to it, but it's quite the start so far. I used Microsoft Power BI for the data visualization and will be adding to it regularly.`,
-    },
-    {
-      id: 12,
-      title: "Wallet Risk Security Tool",
-      date: "May 2024",
-      preview:
-        "If you're into crypto, then I created a wallet risk security tool for you to view your wallets risk...",
-      content: `If you're into crypto, then I created a wallet risk security tool for you to view your wallets risk and to revoke any suspicious open approvals you may have. You can check it out at inDemniFi.me. The website really is inDemniFi.Crypto and since the website is a decentralized one, you can visit it on a Brave browser or you can download the IPFS Companion for google chrome.`,
-    },
-  ];
-
-  const toggleArticle = (id) => {
-    if (expandedArticle === id) {
-      setExpandedArticle(null);
+  useEffect(() => {
+    if (selectedCategory === "All") {
+      setFilteredArticles(allArticles);
     } else {
-      setExpandedArticle(id);
+      setFilteredArticles(
+        allArticles.filter((article) => article.category === selectedCategory)
+      );
+    }
+  }, [selectedCategory]);
+
+  const openArticle = (article) => {
+    setSelectedArticle(article);
+    setIsArticleOpen(true);
+  };
+
+  const closeArticle = () => {
+    setIsArticleOpen(false);
+    setTimeout(() => setSelectedArticle(null), 300);
+  };
+
+  const handleAdminClick = () => {
+    setShowPasswordPrompt(true);
+  };
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    if (password === ADMIN_PASSWORD) {
+      setShowPasswordPrompt(false);
+      setShowManager(true);
+      setPassword("");
+      setPasswordError(false);
+    } else {
+      setPasswordError(true);
+      setTimeout(() => setPasswordError(false), 3000);
     }
   };
 
-  return (
-    <div className="pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h1
-        className="text-4xl font-bold mb-8 text-center"
-        style={{ color: "var(--header-color)" }}
-      >
-        Articles
-      </h1>
+  const closeManager = () => {
+    setShowManager(false);
+  };
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((article) => (
-          <div
-            key={article.id}
-            className="rounded-lg overflow-hidden transition-all duration-300 ease-in-out"
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.1)",
-              backdropFilter: "blur(10px)",
-              borderLeft: "3px solid var(--effect-1)",
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            }}
+  const closePasswordPrompt = () => {
+    setShowPasswordPrompt(false);
+    setPassword("");
+    setPasswordError(false);
+  };
+
+  return (
+    <div className="articles-page">
+      {/* Clean Header */}
+      <header className="articles-header">
+        <h1>Articles & Insights</h1>
+        <p>
+          Exploring the intersection of technology, productivity, and innovation
+        </p>
+      </header>
+
+      {/* Category Navigation */}
+      <nav className="category-nav">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`category-btn ${
+              selectedCategory === category ? "active" : ""
+            }`}
+            onClick={() => setSelectedCategory(category)}
           >
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-2">
-                <span
-                  className="text-sm font-medium"
-                  style={{ color: "var(--description-color)" }}
-                >
-                  {article.date}
-                </span>
+            {category}
+          </button>
+        ))}
+      </nav>
+
+      {/* Articles Grid */}
+      <section className="articles-grid">
+        {filteredArticles.map((article) => (
+          <article
+            key={article.id}
+            className="article-card"
+            onClick={() => openArticle(article)}
+          >
+            <div className="article-card-header">
+              <span className="article-category">{article.category}</span>
+              <span className="article-date">{article.date}</span>
+            </div>
+            <h3 className="article-title">{article.title}</h3>
+            <p className="article-preview">{article.preview}</p>
+            <div className="article-footer">
+              <span className="article-author">{article.author}</span>
+              <span className="article-readtime">{article.readTime}</span>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      {/* Admin Button (hidden but accessible) */}
+      <button className="admin-button" onClick={handleAdminClick}>
+        <i className="fas fa-cog"></i>
+      </button>
+
+      {/* Password Prompt */}
+      {showPasswordPrompt && (
+        <div className="password-modal">
+          <div
+            className="password-modal-overlay"
+            onClick={closePasswordPrompt}
+          ></div>
+          <div className="password-modal-content">
+            <h3>Admin Access</h3>
+            <form onSubmit={handlePasswordSubmit}>
+              <input
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoFocus
+              />
+              <button type="submit">Access</button>
+            </form>
+            {passwordError && <p className="error">Incorrect password</p>}
+          </div>
+        </div>
+      )}
+
+      {/* Article Manager */}
+      {showManager && <ArticleManager onClose={closeManager} />}
+
+      {/* Article Modal */}
+      {selectedArticle && (
+        <div className={`article-modal ${isArticleOpen ? "open" : ""}`}>
+          <div className="article-modal-overlay" onClick={closeArticle}></div>
+          <div className="article-modal-content">
+            <button className="close-article" onClick={closeArticle}>
+              <i className="fas fa-times"></i>
+            </button>
+
+            <article className="full-article">
+              <header className="full-article-header">
+                <div className="article-meta-top">
+                  <span className="article-category">
+                    {selectedArticle.category}
+                  </span>
+                  <span className="article-date">{selectedArticle.date}</span>
+                </div>
+                <h1 className="full-article-title">{selectedArticle.title}</h1>
+                <div className="article-meta-bottom">
+                  <span className="article-author">
+                    By {selectedArticle.author}
+                  </span>
+                  <span className="article-readtime">
+                    {selectedArticle.readTime} read
+                  </span>
+                </div>
+              </header>
+
+              <div className="full-article-content">
+                {selectedArticle.content
+                  .split("\n\n")
+                  .map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
               </div>
 
-              <h2
-                className="text-xl font-semibold mb-2"
-                style={{ color: "var(--header-color)" }}
-              >
-                {article.title}
-              </h2>
-
-              <p className="mb-4" style={{ color: "var(--content-color)" }}>
-                {expandedArticle === article.id
-                  ? article.content.split("\n\n").map((paragraph, i) => (
-                      <span key={i} className="block mb-4">
-                        {paragraph}
+              {selectedArticle.tags && (
+                <footer className="full-article-footer">
+                  <div className="article-tags">
+                    {selectedArticle.tags.map((tag) => (
+                      <span key={tag} className="article-tag">
+                        #{tag}
                       </span>
-                    ))
-                  : article.preview}
-              </p>
-
-              <button
-                onClick={() => toggleArticle(article.id)}
-                className="font-medium transition-colors duration-300"
-                style={{
-                  color: "var(--effect-1)",
-                  textDecoration: "underline",
-                }}
-              >
-                {expandedArticle === article.id ? "Read Less" : "Read More"}
-              </button>
-            </div>
+                    ))}
+                  </div>
+                </footer>
+              )}
+            </article>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
+
+      <style>
+        {`
+        .articles-page {
+          min-height: 100vh;
+          padding-top: 100px;
+          background: var(--bac1);
+          background-image: 
+            radial-gradient(ellipse at top left, var(--bac2) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom right, var(--bac3) 0%, transparent 50%);
+        }
+
+        /* Header */
+        .articles-header {
+          text-align: center;
+          padding: 3rem 2rem;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .articles-header h1 {
+          font-size: 3rem;
+          font-weight: 800;
+          color: var(--header-color);
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, var(--header-color), var(--effect-1));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .articles-header p {
+          font-size: 1.25rem;
+          color: var(--description-color);
+          font-weight: 300;
+        }
+
+        /* Category Navigation */
+        .category-nav {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          padding: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .category-btn {
+          padding: 0.75rem 1.5rem;
+          background: transparent;
+          border: 2px solid var(--nav3);
+          color: var(--nav3);
+          border-radius: 30px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: 500;
+          font-size: 0.95rem;
+        }
+
+        .category-btn:hover {
+          background: var(--nav3);
+          color: white;
+          transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+          background: var(--nav3);
+          color: white;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 2rem;
+          padding: 0 2rem 4rem;
+        }
+
+        /* Article Card */
+        .article-card {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 12px;
+          padding: 2rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .article-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          background: rgba(255, 255, 255, 0.05);
+          border-color: var(--effect-1);
+        }
+
+        .article-card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+          font-size: 0.875rem;
+        }
+
+        .article-category {
+          color: var(--effect-1);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .article-date {
+          color: var(--description-color);
+          opacity: 0.8;
+        }
+
+        .article-title {
+          font-size: 1.5rem;
+          color: var(--header-color);
+          margin-bottom: 1rem;
+          font-weight: 700;
+          line-height: 1.3;
+        }
+
+        .article-preview {
+          color: var(--content-color);
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+          flex-grow: 1;
+          opacity: 0.9;
+        }
+
+        .article-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.875rem;
+          color: var(--description-color);
+          padding-top: 1rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Article Modal */
+        .article-modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+        }
+
+        .article-modal.open {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .article-modal-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(8px);
+        }
+
+        .article-modal-content {
+          position: relative;
+          width: 100%;
+          max-width: 800px;
+          max-height: 90vh;
+          background: var(--bac1);
+          border-radius: 16px;
+          overflow-y: auto;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          transform: scale(0.9);
+          transition: transform 0.3s ease;
+        }
+
+        .article-modal.open .article-modal-content {
+          transform: scale(1);
+        }
+
+        .close-article {
+          position: absolute;
+          top: 1.5rem;
+          right: 1.5rem;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          border: none;
+          color: var(--header-color);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          z-index: 1;
+        }
+
+        .close-article:hover {
+          background: rgba(255, 255, 255, 0.2);
+          transform: rotate(90deg);
+        }
+
+        /* Full Article */
+        .full-article {
+          padding: 3rem;
+        }
+
+        .full-article-header {
+          margin-bottom: 3rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .article-meta-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+          font-size: 0.95rem;
+        }
+
+        .full-article-title {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: var(--header-color);
+          line-height: 1.2;
+          margin-bottom: 1.5rem;
+        }
+
+        .article-meta-bottom {
+          display: flex;
+          gap: 2rem;
+          font-size: 1rem;
+          color: var(--description-color);
+        }
+
+        .full-article-content {
+          font-size: 1.125rem;
+          line-height: 1.8;
+          color: var(--content-color);
+        }
+
+        .full-article-content p {
+          margin-bottom: 1.5rem;
+        }
+
+        .full-article-footer {
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .article-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        .article-tag {
+          padding: 0.5rem 1rem;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          color: var(--description-color);
+          font-size: 0.875rem;
+          transition: all 0.3s ease;
+        }
+
+        .article-tag:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .articles-header h1 {
+            font-size: 2rem;
+          }
+          
+          .articles-header p {
+            font-size: 1rem;
+          }
+          
+          .articles-grid {
+            grid-template-columns: 1fr;
+            padding: 0 1rem 3rem;
+          }
+          
+          .article-modal-content {
+            margin: 1rem;
+          }
+          
+          .full-article {
+            padding: 2rem 1.5rem;
+          }
+          
+          .full-article-title {
+            font-size: 1.75rem;
+          }
+          
+          .article-meta-bottom {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+        }
+        `}
+      </style>
     </div>
   );
 }
