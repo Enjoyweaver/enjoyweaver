@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { saveArticlesToLocal, loadArticlesFromLocal } from "../data/articles";
 
-export default function ArticleManager({ onClose, onSave }) {
+export default function ArticleManager({ onClose }) {
   const existingArticles = loadArticlesFromLocal() || [];
   const [articles, setArticles] = useState(existingArticles);
   const [editingId, setEditingId] = useState(null);

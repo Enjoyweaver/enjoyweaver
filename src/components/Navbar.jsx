@@ -89,6 +89,7 @@ export default function Navbar() {
   const navLinks = [
     { path: "/", label: "Home", color: "var(--nav1)" },
     { path: "/About", label: "About", color: "var(--nav2)" },
+    { path: "/writer", label: "Writer", color: "var(--nav1)" },
     { path: "/Showcase", label: "Showcase", color: "var(--nav3)" },
     { path: "/data", label: "Data Analysis", color: "var(--nav3)" },
     { path: "/articles", label: "Articles", color: "var(--nav3)" },
