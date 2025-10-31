@@ -1,162 +1,165 @@
-// src/components/Footer.jsx
 export default function Footer() {
   return (
-    <footer
-      className="w-full py-4 mt-8"
-      style={{
-        borderTop: "1px solid var(--nav3)",
-        backdropFilter: "blur(5px)",
-        backgroundColor: "rgba(0, 0, 0, 0.1)",
-      }}
-    >
-      <div className="container mx-auto px-4">
-        <div
-          className="flex justify-center gap-6 mb-4"
-          style={{ color: "var(--content-color)" }}
+    <footer className="footer-floating">
+      <div className="footer-links">
+        <a
+          href="https://mycalendy.fun"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
         >
-          <a
-            href="https://www.linkedin.com/in/enjoyweaver"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            className="social-icon"
-          >
-            <i
-              className="fa-brands fa-linkedin-in"
-              style={{ color: "var(--nav1)" }}
-            ></i>
-          </a>
-          <a
-            href="https://bsky.app/profile/enjoyweaver.bsky.social"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="BlueSky"
-            className="social-icon"
-          >
-            <i
-              className="fa-solid fa-square"
-              style={{ color: "var(--nav2)" }}
-            ></i>
-          </a>
-          <a
-            href="https://www.tiktok.com/@enjoyweaver"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="TikTok"
-            className="social-icon"
-          >
-            <i
-              className="fa-brands fa-tiktok"
-              style={{ color: "var(--nav3)" }}
-            ></i>
-          </a>
-          <a
-            href="https://www.instagram.com/enjoyweaver"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Instagram"
-            className="social-icon"
-          >
-            <i
-              className="fa-brands fa-instagram"
-              style={{ color: "var(--nav1)" }}
-            ></i>
-          </a>
-          <a
-            href="https://github.com/enjoyweaver"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="social-icon"
-          >
-            <i
-              className="fa-brands fa-github"
-              style={{ color: "var(--nav2)" }}
-            ></i>
-          </a>
-          <a
-            href="https://www.youtube.com/@enjoyweaver"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="YouTube"
-            className="social-icon"
-          >
-            <i
-              className="fa-brands fa-youtube"
-              style={{ color: "var(--nav3)" }}
-            ></i>
-          </a>
-        </div>
-
-        <div
-          className="text-center"
-          style={{ color: "var(--description-color)" }}
+          My Calendy
+        </a>
+        <a
+          href="https://prismmedia.pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
         >
-          <span>
-            a{" "}
-            <a
-              href="https://enjoyweaver.fun"
-              target="_blank"
-              rel="noreferrer"
-              className="signature-link"
-              style={{
-                color: "var(--header-color)",
-                fontSize: "1.8rem",
-                fontFamily: "Allura, cursive",
-              }}
-            >
-              Michael Weaver
-            </a>{" "}
-            build
-          </span>
-        </div>
+          Prism Media
+        </a>
+        <a
+          href="https://daostination.fun"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          DAOstination
+        </a>
+        <a
+          href="https://safememes.fun"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          SafeMemes
+        </a>
+        <a
+          href="https://collaborating.fun"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          Collaborating
+        </a>
+        <a
+          href="https://daosignerapparel.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          DAOsigner Apparel
+        </a>
+        <a
+          href="https://cartoonmill.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          CartoonMill
+        </a>
+        <a
+          href="https://indemnifi.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          inDemniFi
+        </a>
+        <a
+          href="https://cryptopolicy.center"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          CryptoPolicy
+        </a>
+        <a
+          href="https://notyourbot.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          NotYourBot
+        </a>
+        <a
+          href="https://buildcamp.pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link magnetic"
+        >
+          BuildCamp
+        </a>
       </div>
 
-      <style>
-        {`
-          .social-icon {
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.05);
-            font-size: 1.2rem;
-          }
-          
-          .social-icon:hover {
-            transform: translateY(-3px);
-            background-color: rgba(255, 255, 255, 0.1);
-          }
-          
-          .signature-link {
-            transition: all 0.3s ease;
-            position: relative;
-            display: inline-block;
-          }
-          
-          .signature-link:hover {
-            transform: scale(1.1);
-          }
-          
-          .signature-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--nav2);
-            transition: width 0.3s ease;
-          }
-          
-          .signature-link:hover::after {
-            width: 100%;
-          }
-        `}
-      </style>
+      <div className="footer-social">
+        <a
+          href="https://github.com/enjoyweaver"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon magnetic-strong"
+          aria-label="GitHub"
+        >
+          <i className="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/enjoyweaver"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon magnetic-strong"
+          aria-label="LinkedIn"
+        >
+          <i className="fab fa-linkedin-in"></i>
+        </a>
+        <a
+          href="https://bsky.app/profile/enjoyweaver.bsky.social"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon magnetic-strong"
+          aria-label="BlueSky"
+        >
+          <i className="fa-solid fa-square"></i>
+        </a>
+        <a
+          href="https://www.tiktok.com/@enjoyweaver"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon magnetic-strong"
+          aria-label="TikTok"
+        >
+          <i className="fab fa-tiktok"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/enjoyweaver"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon magnetic-strong"
+          aria-label="Instagram"
+        >
+          <i className="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.youtube.com/@enjoyweaver"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon magnetic-strong"
+          aria-label="YouTube"
+        >
+          <i className="fab fa-youtube"></i>
+        </a>
+      </div>
+
+      <div
+        style={{
+          marginTop: "2rem",
+          fontSize: "0.75rem",
+          color: "var(--text-tertiary)",
+          opacity: 0.5,
+          textAlign: "center",
+        }}
+      >
+        © {new Date().getFullYear()} Michael Weaver
+      </div>
     </footer>
   );
 }

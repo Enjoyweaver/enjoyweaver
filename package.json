@@ -1,5 +1,5 @@
 {
-  "name": "my-website",
+  "name": "enjoyweaver",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,9 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "supabase": "supabase",
+    "claude": "claude",
+    "claude:auth": "claude auth",
+    "claude:help": "claude --help",
+    "cc:fix": "claude 'Read build/troubleshooting/workflow.md then help me fix:'",
+    "cc:db": "claude 'Read build/technical/database/mapping/mappings.md then'",
+    "cc:review": "claude 'Review this code against build/core/critical_rules.md:'"
   },
   "dependencies": {
+    "@anthropic-ai/claude-code": "^2.0.30",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1"
