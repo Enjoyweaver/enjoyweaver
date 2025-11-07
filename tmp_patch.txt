@@ -1,0 +1,9 @@
+*** Begin Patch
+*** Update File: src/App.css
+@@
+ .float-layer-2 {
+-  transform: translateZ(var(--depth-mid));
++  transform: translateZ(var(--depth-mid));
++  pointer-events: none;
+ }
+*** End Patch
