@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 import { fetchRecentActivity, timeAgo } from "../services/github";
 
 export default function BuildStream() {
@@ -6,6 +7,7 @@ export default function BuildStream() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [scrollY, setScrollY] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     loadActivity();
@@ -103,7 +105,7 @@ export default function BuildStream() {
                   key={projectData.repoPath}
                   className="stream-current"
                   style={{
-                    transform: `translateX(${scrollY * 0.01 * (isLeft ? 1 : -1)}px) translateZ(${depth}px)`,
+                    transform: `translateX(${scrollY * (isMobile ? 0.004 : 0.01) * (isLeft ? 1 : -1)}px) translateZ(${depth}px)`,
                   }}
                 >
                   {/* Huge Project Name Background */}
@@ -335,13 +337,17 @@ export default function BuildStream() {
         }
 
         @media (max-width: 768px) {
+          .stream-container {
+            padding-left: 6%;
+            padding-right: 6%;
+          }
           .stream-current {
             min-height: auto;
           }
 
           .commits-flow {
-            padding-left: 5% !important;
-            padding-right: 5% !important;
+            padding-left: 6% !important;
+            padding-right: 6% !important;
             align-items: flex-start !important;
           }
 

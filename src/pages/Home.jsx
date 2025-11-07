@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import BuildStream from "../components/BuildStream";
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -118,93 +120,144 @@ export default function Home() {
     overflowY: "hidden",
   };
 
+  const mobileRowStyle = isMobile ? { width: "100%" } : undefined;
+  const mobileSideStyle = isMobile ? { width: "50%" } : undefined;
+
   return (
     <>
       <div style={bodyStyle}>
         <div className="pillar">
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 I am
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 Michael Weaver
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 only a name
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 until my actions outweigh my words
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 my lips will speak of
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 pursuing my passions
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 the rest of my life
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 fueling my dreams
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 if my dreams are
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 not igniting my fire
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 burning without fuel
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 is failing to live.
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 to create, build, and
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 fuel other fires
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" style={mobileRowStyle}>
             <div className="wrap">
-              <div className="left" style={{ color: "var(--header-color)" }}>
+              <div
+                className="left"
+                style={{ color: "var(--header-color)", ...(mobileSideStyle || {}) }}
+              >
                 contribute to society
               </div>
-              <div className="right" style={{ color: "var(--content-color)" }}>
+              <div
+                className="right"
+                style={{ color: "var(--content-color)", ...(mobileSideStyle || {}) }}
+              >
                 by inspiring people
               </div>
             </div>

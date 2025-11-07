@@ -722,8 +722,42 @@ body {
     margin-bottom: 1.5rem;
   }
 
+  /* Prevent hidden second line (right) from affecting row height on mobile */
+  .row {
+    position: relative;
+  }
+  .wrap {
+    position: relative;
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    white-space: nowrap;
+  }
+
   .project-float {
     transform: none !important;
+  }
+
+  /* Center project items and prevent lateral overflow on small screens */
+  .projects-space {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+  .project-float > * {
+    transform: translateZ(0) translateX(0) !important;
+  }
+
+  /* Lower poem to clear fixed header */
+  .pillar {
+    padding-top: calc(var(--space-xl) + var(--space-lg));
+  }
+
+  /* Move GitHub pill so it doesn't overlap the section title */
+  .project-constellation .github-ribbon {
+    top: calc(var(--space-xl) + var(--space-lg));
+    right: var(--space-md);
   }
 
   .float-layer-1,
