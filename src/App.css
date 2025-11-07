@@ -136,6 +136,7 @@ body {
 } /* Poem needs flat context for 3D */
 .float-layer-2 {
   transform: translateZ(var(--depth-mid));
+  pointer-events: none;
 }
 .float-layer-3 {
   transform: translateZ(0);
@@ -452,6 +453,8 @@ body {
 
 .row:hover {
   z-index: 1;
+  /* Ensure revealed second line matches navbar hover teal */
+  --content-color: var(--cyan);
 }
 
 .row:hover .left:before {
@@ -565,6 +568,51 @@ body {
   transform: translateZ(25px) translateX(15px);
 }
 .project-float:nth-child(11) {
+  transform: translateZ(-15px) translateX(-25px);
+}
+
+/* Keep link hitbox flat; move depth to children to fix hover/click hit-testing */
+.project-float {
+  transform: none !important; /* neutralize parent 3D transform for reliable pointer events */
+  position: relative; /* create stacking context without affecting layout */
+  z-index: 1;
+}
+
+.project-float > * {
+  transition: transform var(--transition-slow);
+}
+
+.project-float:nth-child(1) > * {
+  transform: translateZ(50px);
+}
+.project-float:nth-child(2) > * {
+  transform: translateZ(0px) translateX(50px);
+}
+.project-float:nth-child(3) > * {
+  transform: translateZ(-30px) translateX(-30px);
+}
+.project-float:nth-child(4) > * {
+  transform: translateZ(20px) translateX(30px);
+}
+.project-float:nth-child(5) > * {
+  transform: translateZ(-10px) translateX(-20px);
+}
+.project-float:nth-child(6) > * {
+  transform: translateZ(40px) translateX(40px);
+}
+.project-float:nth-child(7) > * {
+  transform: translateZ(-20px) translateX(20px);
+}
+.project-float:nth-child(8) > * {
+  transform: translateZ(30px) translateX(-40px);
+}
+.project-float:nth-child(9) > * {
+  transform: translateZ(0px) translateX(-10px);
+}
+.project-float:nth-child(10) > * {
+  transform: translateZ(25px) translateX(15px);
+}
+.project-float:nth-child(11) > * {
   transform: translateZ(-15px) translateX(-25px);
 }
 
