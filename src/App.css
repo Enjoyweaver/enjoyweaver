@@ -822,3 +822,16 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Click stacking fix: bring articles layer forward on desktop */
+@media (min-width: 769px) {
+  .float-layer-4 {
+    transform: translateZ(0);
+    position: relative;
+    z-index: 5;
+  }
+  .float-layer-3 {
+    position: relative;
+    z-index: 1;
+  }
+}
