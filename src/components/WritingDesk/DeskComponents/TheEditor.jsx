@@ -1,300 +1,190 @@
-// src/components/WritingDesk/DeskComponents/TheEditor.jsx
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import { chatWithEditor } from "../../../services/editorAI";
 
 export default function TheEditor({ isActive, position }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [analysisData, setAnalysisData] = useState({
-    topicDepth: 0,
-    authority: 0,
-    engagement: 0,
-    conciseness: 0,
-    voiceConsistency: 0,
-    sourcesNeeded: 0,
-    factsToVerify: 0,
-    activeSources: 0,
-  });
-  const [suggestions, setSuggestions] = useState([]);
-  const [citations] = useState([]);
-  const [editorMode, setEditorMode] = useState("analysis"); // analysis, research, suggestions
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [currentContent, setCurrentContent] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
-  // AI analysis function (empty for now, will be implemented with backend)
-  const analyzeContent = async () => {
-    setIsAnalyzing(true);
-
-    // Get current content from localStorage
-    const saved = localStorage.getItem("currentArticle");
-    if (saved) {
-      const data = JSON.parse(saved);
-      setCurrentContent(data.content || "");
-
-      // TODO: Replace with actual AI analysis
-      // const analysisResult = await aiAnalyzeContent(data.content);
-      // setAnalysisData(analysisResult.metrics);
-      // setSuggestions(analysisResult.suggestions);
-
-      // For now, just simulate analysis delay
-      setTimeout(() => {
-        setIsAnalyzing(false);
-      }, 2000);
-    } else {
-      setIsAnalyzing(false);
-    }
-  };
-
-  // Auto-analyze when content changes
+  // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
-    if (isActive && isExpanded) {
-      analyzeContent();
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  // Focus input when chat opens
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
     }
-  }, [isActive, isExpanded]);
+  }, [isOpen]);
 
-  // Handle suggestion implementation (empty for backend integration)
-  const implementSuggestion = (suggestion) => {
-    // TODO: Implement suggestion using AI API
-    console.log("Implementing suggestion:", suggestion);
-    setSuggestions((prev) => prev.filter((s) => s.id !== suggestion.id));
+  // Get current article from localStorage
+  const getCurrentArticle = () => {
+    const saved = localStorage.getItem("currentArticle");
+    if (!saved) return { title: "", content: "" };
+    const data = JSON.parse(saved);
+    return {
+      title: data.title || "",
+      content: data.content || "",
+    };
   };
 
-  // Handle citation insertion (empty for backend integration)
-  const insertCitation = (citation) => {
-    // TODO: Insert citation into the text using AI
-    console.log("Inserting citation:", citation);
+  // Send message to The Editor
+  const handleSendMessage = async (messageText = null) => {
+    const textToSend = messageText || inputValue.trim();
+    if (!textToSend || isLoading) return;
+
+    setInputValue("");
+
+    // Add user message to chat
+    const newMessages = [...messages, { role: "user", content: textToSend }];
+    setMessages(newMessages);
+    setIsLoading(true);
+
+    try {
+      const article = getCurrentArticle();
+      const response = await chatWithEditor(newMessages, article.title, article.content);
+
+      // Add AI response to chat
+      setMessages([...newMessages, { role: "assistant", content: response }]);
+    } catch (error) {
+      console.error("Chat error:", error);
+      setMessages([
+        ...newMessages,
+        {
+          role: "assistant",
+          content: `Error: ${error.message}. Please check your API configuration.`,
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  // Get progress bar color
-  const getProgressColor = (value) => {
-    if (value <= 2) return "#ef4444";
-    if (value <= 3) return "#f59e0b";
-    return "#10b981";
+  // Send starter prompt
+  const sendStarterPrompt = (prompt) => {
+    handleSendMessage(prompt);
   };
 
-  // Render progress bar
-  const ProgressBar = ({ label, value, max = 5 }) => (
-    <div className="progress-item">
-      <div className="progress-label">
-        <span>{label}</span>
-        <span className="progress-value">
-          {value}/{max}
-        </span>
-      </div>
-      <div className="progress-bar">
-        <div
-          className="progress-fill"
-          style={{
-            width: `${(value / max) * 100}%`,
-            backgroundColor: getProgressColor(value),
-          }}
-        />
-      </div>
-    </div>
-  );
+  // Handle Enter key to send
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+
+  // Clear chat
+  const handleClearChat = () => {
+    if (confirm("Clear all messages?")) {
+      setMessages([]);
+    }
+  };
 
   return (
-    <div className={`the-editor ${isActive ? "active" : ""} ${position}`}>
-      {/* Editor Toggle Button */}
+    <div className="the-editor-chat">
       <button
         className="editor-toggle"
-        onClick={() => setIsExpanded(!isExpanded)}
-        title="Toggle The Editor"
+        onClick={() => setIsOpen(!isOpen)}
+        title="Chat with The Editor"
       >
-        🤖
-        {analysisData.sourcesNeeded > 0 && (
-          <span className="notification-badge">
-            {analysisData.sourcesNeeded}
-          </span>
-        )}
+        {isOpen ? "Close Editor" : "💬 The Editor"}
       </button>
 
-      {/* Editor Panel */}
-      {isExpanded && (
-        <div className="editor-panel">
-          <div className="editor-header">
-            <h3>🤖 The Editor</h3>
-            <div className="editor-tabs">
-              <button
-                className={editorMode === "analysis" ? "active" : ""}
-                onClick={() => setEditorMode("analysis")}
-              >
-                Analysis
-              </button>
-              <button
-                className={editorMode === "research" ? "active" : ""}
-                onClick={() => setEditorMode("research")}
-              >
-                Research
-              </button>
-              <button
-                className={editorMode === "suggestions" ? "active" : ""}
-                onClick={() => setEditorMode("suggestions")}
-              >
-                Suggestions
+      {isOpen && (
+        <div className="editor-chat-panel">
+          {/* Chat Header */}
+          <div className="chat-header">
+            <div className="chat-title">
+              <span className="chat-icon">🤖</span>
+              <h3>The Editor</h3>
+            </div>
+            <div className="chat-actions">
+              {messages.length > 0 && (
+                <button className="clear-btn" onClick={handleClearChat} title="Clear chat">
+                  🗑️
+                </button>
+              )}
+              <button className="close-btn" onClick={() => setIsOpen(false)}>
+                ✕
               </button>
             </div>
-            <button
-              className="close-editor"
-              onClick={() => setIsExpanded(false)}
-            >
-              ×
-            </button>
           </div>
 
-          <div className="editor-content">
-            {isAnalyzing && (
-              <div className="analyzing-indicator">
-                <div className="spinner"></div>
-                <span>Analyzing your content...</span>
-              </div>
-            )}
-
-            {editorMode === "analysis" && !isAnalyzing && (
-              <div className="analysis-tab">
-                <h4>📊 Article Analysis</h4>
-                <div className="analysis-metrics">
-                  <ProgressBar
-                    label="Topic Depth"
-                    value={analysisData.topicDepth}
-                  />
-                  <ProgressBar
-                    label="Authority"
-                    value={analysisData.authority}
-                  />
-                  <ProgressBar
-                    label="Engagement"
-                    value={analysisData.engagement}
-                  />
-                  <ProgressBar
-                    label="Conciseness"
-                    value={analysisData.conciseness}
-                  />
-                  <ProgressBar
-                    label="Voice Consistency"
-                    value={analysisData.voiceConsistency}
-                  />
-                </div>
-
-                <div className="quick-stats">
-                  <div className="stat-card">
-                    <span className="stat-number">
-                      {analysisData.activeSources}
-                    </span>
-                    <span className="stat-label">Sources Found</span>
-                  </div>
-                  <div className="stat-card">
-                    <span className="stat-number">
-                      {analysisData.sourcesNeeded}
-                    </span>
-                    <span className="stat-label">Citations Needed</span>
-                  </div>
-                  <div className="stat-card">
-                    <span className="stat-number">
-                      {analysisData.factsToVerify}
-                    </span>
-                    <span className="stat-label">Facts to Verify</span>
+          {/* Messages Container */}
+          <div className="chat-messages">
+            {messages.length === 0 && (
+              <div className="empty-chat">
+                <div className="welcome-message">
+                  <h4>👋 Hi! I'm The Editor</h4>
+                  <p>I can help you improve your article with:</p>
+                  <ul>
+                    <li>Strategic feedback on your approach and mission</li>
+                    <li>Tactical suggestions for clarity and conciseness</li>
+                    <li>Research guidance and fact-checking</li>
+                    <li>Voice consistency and engagement tips</li>
+                  </ul>
+                  <p className="tip">Get started:</p>
+                  <div className="starter-prompts">
+                    <button onClick={() => sendStarterPrompt("Analyze my article and provide strategic feedback")}>
+                      📊 Analyze Article
+                    </button>
+                    <button onClick={() => sendStarterPrompt("Review my writing for clarity and conciseness")}>
+                      ✨ Review Clarity
+                    </button>
+                    <button onClick={() => sendStarterPrompt("Check if my writing style is consistent and authentic")}>
+                      🎯 Check Voice
+                    </button>
                   </div>
                 </div>
-
-                <button
-                  className="re-analyze-btn"
-                  onClick={analyzeContent}
-                  disabled={isAnalyzing}
-                >
-                  Re-analyze Content
-                </button>
               </div>
             )}
 
-            {editorMode === "research" && (
-              <div className="research-tab">
-                <h4>🔍 Research & Citations</h4>
-                <div className="citations-list">
-                  {citations.length === 0 ? (
-                    <div className="empty-state">
-                      <p>
-                        No citations found yet. Start writing to get AI-powered
-                        research suggestions.
-                      </p>
-                    </div>
-                  ) : (
-                    citations.map((citation) => (
-                      <div key={citation.id} className="citation-item">
-                        <div className="citation-type">
-                          {citation.type === "academic" && "🎓"}
-                          {citation.type === "news" && "📰"}
-                          {citation.type === "data" && "📊"}
-                        </div>
-                        <div className="citation-details">
-                          <h5>{citation.title}</h5>
-                          <p>{citation.source}</p>
-                        </div>
-                        <button
-                          className="insert-citation"
-                          onClick={() => insertCitation(citation)}
-                        >
-                          Insert
-                        </button>
-                      </div>
-                    ))
-                  )}
+            {messages.map((message, index) => (
+              <div key={index} className={`message ${message.role}`}>
+                <div className="message-content">
+                  <div className="message-text">{message.content}</div>
                 </div>
+              </div>
+            ))}
 
-                <div className="research-actions">
-                  <button
-                    className="research-btn"
-                    onClick={() => {
-                      /* TODO: Find more sources */
-                    }}
-                  >
-                    Find More Sources
-                  </button>
-                  <button
-                    className="research-btn"
-                    onClick={() => {
-                      /* TODO: Fact check */
-                    }}
-                  >
-                    Fact Check
-                  </button>
+            {isLoading && (
+              <div className="message assistant">
+                <div className="message-content">
+                  <div className="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
               </div>
             )}
 
-            {editorMode === "suggestions" && (
-              <div className="suggestions-tab">
-                <h4>💡 Editorial Suggestions</h4>
-                <div className="suggestions-list">
-                  {suggestions.length > 0 ? (
-                    suggestions.map((suggestion) => (
-                      <div key={suggestion.id} className="suggestion-item">
-                        <div className="suggestion-type">
-                          {suggestion.type === "structure" && "🏗️"}
-                          {suggestion.type === "evidence" && "📋"}
-                          {suggestion.type === "clarity" && "💡"}
-                        </div>
-                        <div className="suggestion-text">
-                          <p>{suggestion.text}</p>
-                        </div>
-                        <button
-                          className="implement-suggestion"
-                          onClick={() => implementSuggestion(suggestion)}
-                        >
-                          Apply
-                        </button>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="no-suggestions">
-                      <p>No suggestions available yet.</p>
-                      <p>
-                        Start writing and The Editor will analyze your content
-                        to provide personalized recommendations.
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Input Area */}
+          <div className="chat-input-container">
+            <textarea
+              ref={inputRef}
+              className="chat-input"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Ask me anything about your article..."
+              rows={1}
+              disabled={isLoading}
+            />
+            <button
+              className="send-btn"
+              onClick={handleSendMessage}
+              disabled={!inputValue.trim() || isLoading}
+            >
+              {isLoading ? "⏳" : "➤"}
+            </button>
           </div>
         </div>
       )}

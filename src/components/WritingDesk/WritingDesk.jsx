@@ -1,42 +1,33 @@
-// src/components/WritingDesk/WritingDesk.jsx
-import { useState, useEffect } from "react";
-import DeskSurface from "./DeskSurface";
-import LeftShelf from "./LeftShelf";
-import RightShelf from "./RightShelf";
+import { useState } from "react";
 import ScenicView from "./ScenicView";
+import LeftShelf from "./LeftShelf";
+import DeskSurface from "./DeskSurface";
+import RightShelf from "./RightShelf";
+import TheEditor from "./DeskComponents/TheEditor";
+import "../../styles/writing-desk.css";
 
 export default function WritingDesk() {
   const [deskConfig] = useState({
-    theme: "modern-wood",
-    view: "mountain-lake",
-    lighting: "warm-evening",
-    ambientSound: "forest-rain",
+    theme: "modern",
+    view: "gradient-1",
+    lighting: "ambient",
   });
 
-  const [isInitialized, setIsInitialized] = useState(false);
-
-  // Initialize desk environment
-  useEffect(() => {
-    // Load user preferences
-    // Set up ambient environment
-    // Initialize writing session
-    setIsInitialized(true);
-  }, []);
+  const [leftShelfOpen, setLeftShelfOpen] = useState(false);
+  const [rightShelfOpen, setRightShelfOpen] = useState(false);
 
   return (
     <div className="writing-desk-container">
       <ScenicView config={deskConfig} />
 
       <div className="desk-workspace">
-        <LeftShelf />
-        <DeskSurface config={deskConfig} />
-        <RightShelf />
+        <LeftShelf isOpen={leftShelfOpen} onToggle={() => setLeftShelfOpen(!leftShelfOpen)} />
+        <DeskSurface config={deskConfig} leftShelfOpen={leftShelfOpen} rightShelfOpen={rightShelfOpen} />
+        <RightShelf isOpen={rightShelfOpen} onToggle={() => setRightShelfOpen(!rightShelfOpen)} />
       </div>
 
-      {/* Ambient layer for sounds, lighting effects */}
-      <div className="ambient-layer">
-        {/* Particle effects, lighting, sound controls */}
-      </div>
+      {/* The Editor - Bottom Right Overlay */}
+      <TheEditor isActive={true} position="bottom-right" />
     </div>
   );
 }
