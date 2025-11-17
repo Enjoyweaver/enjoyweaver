@@ -126,11 +126,6 @@ export default function Articles() {
               <div
                 key={article.id}
                 className="article-current"
-                style={{
-                  transform: `translateX(${
-                    scrollY * 0.01 * (isLeft ? 1 : -1)
-                  }px) translateZ(${depth}px)`,
-                }}
                 onClick={() => openArticle(article)}
               >
                 {/* Massive Article Title Background */}
@@ -138,7 +133,7 @@ export default function Articles() {
                   className={`article-title-bg text-glow-${articleColor}`}
                   style={{
                     position: "absolute",
-                    top: isLeft ? "-15%" : "-10%",
+                    top: "20%",
                     left: isLeft ? "5%" : "auto",
                     right: isLeft ? "auto" : "5%",
                     fontSize: "clamp(3rem, 12vw, 8rem)",
@@ -430,16 +425,12 @@ export default function Articles() {
           display: flex;
           flex-direction: column;
           gap: calc(var(--space-xl) * 2);
-          transform-style: preserve-3d;
-          perspective: 1000px;
         }
 
         .article-current {
           position: relative;
           width: 100%;
           min-height: 250px;
-          transform-style: preserve-3d;
-          transition: transform 0.1s linear;
           margin-bottom: var(--space-lg);
         }
 

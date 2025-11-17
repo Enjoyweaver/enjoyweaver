@@ -1,69 +1,137 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const sections = [
+    {
+      label: "thought",
+      title: "systems",
+      description: "articles & writing",
+      link: "/articles",
+      isExternal: false,
+    },
+    {
+      label: "live",
+      title: "projects",
+      description: "deployed & active",
+      sectionId: "projects",
+    },
+    {
+      label: "work in",
+      title: "progress",
+      description: "building & testing",
+      sectionId: "wip",
+    },
+    {
+      label: "build",
+      title: "stream",
+      description: "github activity",
+      sectionId: "data",
+    },
+  ];
+
+  const handleSectionClick = (section) => {
+    if (section.link) {
+      navigate(section.link);
+    } else if (section.sectionId) {
+      // If we're not on the home page, navigate there first
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const element = document.getElementById(section.sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(section.sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    }
+  };
+
   return (
     <footer className="footer-professional">
       <div className="footer-container">
-        {/* Project Links */}
-        <div className="footer-main-row">
-          <div className="footer-links-horizontal">
-            <Link to="/writer" className="footer-link footer-link-editor">
-              ✍️ Editor
-            </Link>
-            <a href="https://mycalendy.fun" target="_blank" rel="noopener noreferrer" className="footer-link">
-              My Calendy
-            </a>
-            <a href="https://prismmedia.pro" target="_blank" rel="noopener noreferrer" className="footer-link">
-              Prism Media
-            </a>
-            <a href="https://daostination.fun" target="_blank" rel="noopener noreferrer" className="footer-link">
-              DAOstination
-            </a>
-            <a href="https://safememes.fun" target="_blank" rel="noopener noreferrer" className="footer-link">
-              SafeMemes
-            </a>
-            <a href="https://collaborating.fun" target="_blank" rel="noopener noreferrer" className="footer-link">
-              Collaborating
-            </a>
-            <a href="https://daosignerapparel.com" target="_blank" rel="noopener noreferrer" className="footer-link">
-              DAOsigner
-            </a>
-            <a href="https://cartoonmill.com" target="_blank" rel="noopener noreferrer" className="footer-link">
-              CartoonMill
-            </a>
-            <a href="https://indemnifi.me" target="_blank" rel="noopener noreferrer" className="footer-link">
-              inDemniFi
-            </a>
-            <a href="https://cryptopolicy.center" target="_blank" rel="noopener noreferrer" className="footer-link">
-              CryptoPolicy
-            </a>
-            <a href="https://notyourbot.xyz" target="_blank" rel="noopener noreferrer" className="footer-link">
-              NotYourBot
-            </a>
-            <a href="https://buildcamp.pro" target="_blank" rel="noopener noreferrer" className="footer-link">
-              BuildCamp
-            </a>
-          </div>
+        {/* Section Navigation */}
+        <div className="footer-sections">
+          {sections.map((section, index) => (
+            <div
+              key={index}
+              className="footer-section-card"
+              onClick={() => handleSectionClick(section)}
+              style={{ cursor: "pointer" }}
+            >
+              <div className="footer-section-icon">{section.icon}</div>
+              <div className="footer-section-content">
+                <div className="footer-section-label">{section.label}</div>
+                <div className="footer-section-title">{section.title}</div>
+                <div className="footer-section-description">
+                  {section.description}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Social Icons */}
         <div className="footer-social-row">
-          <a href="https://github.com/enjoyweaver" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
+          <a
+            href="https://github.com/enjoyweaver"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="GitHub"
+          >
             <i className="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/enjoyweaver" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/enjoyweaver"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="LinkedIn"
+          >
             <i className="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://bsky.app/profile/enjoyweaver.bsky.social" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="BlueSky">
+          <a
+            href="https://bsky.app/profile/enjoyweaver.bsky.social"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="BlueSky"
+          >
             <i className="fa-solid fa-square"></i>
           </a>
-          <a href="https://www.tiktok.com/@enjoyweaver" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="TikTok">
+          <a
+            href="https://www.tiktok.com/@enjoyweaver"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="TikTok"
+          >
             <i className="fab fa-tiktok"></i>
           </a>
-          <a href="https://www.instagram.com/enjoyweaver" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/enjoyweaver"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="Instagram"
+          >
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://www.youtube.com/@enjoyweaver" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
+          <a
+            href="https://www.youtube.com/@enjoyweaver"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="YouTube"
+          >
             <i className="fab fa-youtube"></i>
           </a>
         </div>

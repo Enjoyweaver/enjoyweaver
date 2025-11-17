@@ -8,6 +8,15 @@ export default function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState(0);
 
+  // Section names for navigation
+  const sections = [
+    { name: "Intro", id: "intro" },
+    { name: "Identity", id: "identity" },
+    { name: "Projects", id: "projects" },
+    { name: "WIP", id: "wip" },
+    { name: "Thoughts", id: "thoughts" },
+  ];
+
   // Smart navbar hide/show on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -29,12 +38,11 @@ export default function Navbar() {
       setLastScrollY(currentScrollY);
 
       // Determine active section based on scroll position
-      const sections = [0, 0.25, 0.5, 0.75]; // 4 main sections
-      const scrollPercent =
-        currentScrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const sectionElements = sections.map(s => document.getElementById(s.id));
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        if (scrollPercent >= sections[i]) {
+      for (let i = sectionElements.length - 1; i >= 0; i--) {
+        const element = sectionElements[i];
+        if (element && element.getBoundingClientRect().top <= 100) {
           setActiveSection(i);
           break;
         }
@@ -46,30 +54,36 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const scrollToSection = (index) => {
-    const sections = [0, 0.25, 0.5, 0.75];
-    const targetScroll =
-      sections[index] * (document.documentElement.scrollHeight - window.innerHeight);
-    window.scrollTo({
-      top: targetScroll,
-      behavior: "smooth",
-    });
+    const element = document.getElementById(sections[index].id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
     <>
-      <nav className={`navbar-floating ${scrolled ? "glass" : ""} ${hidden ? "hidden" : ""}`}>
+      <nav
+        className={`navbar-floating ${scrolled ? "glass" : ""} ${
+          hidden ? "hidden" : ""
+        }`}
+      >
         <NavLink to="/" className="navbar-logo">
           Michael Weaver
         </NavLink>
 
         <div className="navbar-nav">
-          {[0, 1, 2, 3].map((index) => (
+          {sections.map((section, index) => (
             <div
               key={index}
-              className={`nav-dot ${activeSection === index ? "active" : ""}`}
+              className={`nav-item ${activeSection === index ? "active" : ""}`}
               onClick={() => scrollToSection(index)}
-              aria-label={`Navigate to section ${index + 1}`}
-            />
+            >
+              <div className="nav-dot" />
+              <span className="nav-label">{section.name}</span>
+            </div>
           ))}
         </div>
       </nav>
